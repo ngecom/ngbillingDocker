@@ -1,0 +1,44 @@
+Date: Sun Nov 13 21:49:51 GST 2016
+To: priyaviraj83@gmail.com
+From: admin@jbilling.com
+Subject: Initial Credentials
+Body: Hello Rakesh Sahadevan,
+
+Welcome to jBilling!.
+
+Please follow this link to set your credentials:
+
+http://www.yourcompany.com/jbilling/resetPassword/changePassword?token=Mdc3WF2UMpsNddhggbfaDUENAmoAD7pN
+
+Admin:	ngecom
+Attachement: null
+        ----------------------        
+Date: Wed Nov 23 05:04:59 GST 2016
+To: priyaviraj83@gmail.com
+From: admin@jbilling.com
+Subject: Initial Credentials
+Body: Hello Rakesh Sahadevan,
+
+Welcome to jBilling!.
+
+Please follow this link to set your credentials:
+
+http://www.yourcompany.com/jbilling/resetPassword/changePassword?token=5wf0n22fnvjq0lpHll4V4JGVoKJCiYHy
+
+Admin:	ngecom
+Attachement: null
+        ----------------------        
+Date: Fri Nov 25 16:55:34 GST 2016
+To: priyaviraj83@gmail.com
+From: admin@jbilling.com
+Subject: Billing Statement from ngecom
+Body: 
+Attachement: null
+        ----------------------        
+Date: Fri Nov 25 18:54:38 GST 2016
+To: priyaviraj83@gmail.com
+From: admin@jbilling.com
+Subject: Billing Statement from ngecom
+Body: 
+Attachement: null
+        ----------------------        
