@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="simple_invoice" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="40" bottomMargin="40">
+<!-- Created with Jaspersoft Studio version 6.5.0.final using JasperReports Library version 6.5.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="simple_invoice" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="40" bottomMargin="40" uuid="57b66f8b-d0ba-456a-aeec-d43e937e8662">
 	<property name="com.jasperassistant.designer.GridHeight" value="12"/>
 	<property name="com.jasperassistant.designer.GridWidth" value="12"/>
 	<property name="com.jasperassistant.designer.SnapToGrid" value="false"/>
@@ -7,6 +8,7 @@
 	<property name="ireport.zoom" value="2.0"/>
 	<property name="ireport.x" value="244"/>
 	<property name="ireport.y" value="0"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
 	<parameter name="invoiceNumber" class="java.lang.String"/>
 	<parameter name="entityName" class="java.lang.String"/>
 	<parameter name="entityAddress" class="java.lang.String"/>
@@ -27,263 +29,269 @@
 	<parameter name="customerOrganization" class="java.lang.String"/>
 	<parameter name="totalWithTax" class="java.lang.String"/>
 	<parameter name="totalWithoutTax" class="java.lang.String"/>
-	<field name="quantity" class="java.math.BigDecimal"/>
-	<field name="description" class="java.lang.String"/>
-	<field name="price" class="java.math.BigDecimal"/>
-	<field name="amount" class="java.math.BigDecimal"/>
+	<parameter name="footerpart1" class="java.lang.String"/>
+	<parameter name="footerpart2" class="java.lang.String"/>
+	<parameter name="footerpart3" class="java.lang.String"/>
+	<parameter name="tax" class="java.lang.String"/>
+	<parameter name="total_desc" class="java.lang.String"/>
+	<parameter name="tax_desc" class="java.lang.String"/>
+	<parameter name="grand_total_desc" class="java.lang.String"/>
+	<parameter name="posh" class="java.lang.String"/>
+	<parameter name="anzahlh" class="java.lang.String"/>
+	<parameter name="desch" class="java.lang.String"/>
+	<parameter name="neth" class="java.lang.String"/>
+	<field name="pos" class="java.lang.String"/>
+	<field name="anzahl" class="java.lang.String"/>
+	<field name="desc" class="java.lang.String"/>
+	<field name="net" class="java.lang.String"/>
 	<group name="invoice_total">
 		<groupFooter>
-			<band height="84">
-				<rectangle>
-					<reportElement positionType="Float" x="342" y="8" width="204" height="31"/>
-				</rectangle>
-				<staticText>
-					<reportElement positionType="Float" x="349" y="14" width="92" height="20"/>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font size="12" isBold="true" isItalic="true"/>
-					</textElement>
-					<text><![CDATA[Total amount:]]></text>
-				</staticText>
-				<textField hyperlinkType="None">
-					<reportElement positionType="Float" x="451" y="15" width="89" height="19"/>
+			<band height="153">
+				<textField>
+					<reportElement positionType="Float" x="448" y="5" width="92" height="19" uuid="6362c6f0-172f-4ae8-8f36-b566f376aa94"/>
 					<textElement textAlignment="Right" verticalAlignment="Middle">
-						<font size="12" isBold="true" isItalic="true"/>
+						<font size="11" isBold="false" isItalic="false"/>
 					</textElement>
-					<textFieldExpression class="java.lang.String"><![CDATA[$P{totalWithoutTax}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$P{totalWithoutTax}]]></textFieldExpression>
 				</textField>
-				<textField isBlankWhenNull="true" hyperlinkType="None">
-					<reportElement positionType="Float" x="24" y="6" width="314" height="74"/>
-					<textElement/>
-					<textFieldExpression class="java.lang.String"><![CDATA[$P{notes}]]></textFieldExpression>
+				<textField isBlankWhenNull="true">
+					<reportElement positionType="Float" x="3" y="100" width="314" height="53" uuid="41a16d38-c70f-4f70-bd0b-8d68c3e6c337"/>
+					<textElement markup="html"/>
+					<textFieldExpression><![CDATA[$P{notes}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement positionType="Float" x="448" y="29" width="92" height="19" uuid="7ce49810-db42-4522-a68f-d41d7d11ed1f"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="11" isBold="false" isItalic="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{tax}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement positionType="Float" x="448" y="63" width="92" height="19" uuid="d6fa96b9-0ca6-40c9-92e7-d568a2710a37"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="11" isBold="true" isItalic="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{totalWithTax}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement positionType="Float" x="0" y="55" width="550" height="1" uuid="bff5054d-616f-4805-bf4a-fa7467e9ea44">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<graphicElement>
+						<pen lineWidth="4.0" lineColor="#CCCCB3"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement positionType="Float" x="5" y="0" width="550" height="1" uuid="4474e2f6-bec4-4c5d-952e-b4af873663cb">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					</reportElement>
+					<graphicElement>
+						<pen lineWidth="4.0" lineColor="#CCCCB3"/>
+					</graphicElement>
+				</line>
+				<textField>
+					<reportElement x="3" y="5" width="445" height="19" uuid="8094c924-8c02-45b7-83ba-34fe79b736d5">
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<textElement>
+						<font size="11"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{total_desc}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="3" y="29" width="445" height="19" uuid="09bb2ab0-8ec2-4ab2-bb00-4c8286195ba9"/>
+					<textElement>
+						<font size="11"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{tax_desc}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="3" y="63" width="445" height="19" uuid="7d9b15b8-975f-4ffc-a82f-684cc5c9caf4">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					</reportElement>
+					<textElement>
+						<font size="11" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{grand_total_desc}]]></textFieldExpression>
 				</textField>
 			</band>
 		</groupFooter>
 	</group>
 	<title>
-		<band height="221">
-			<textField hyperlinkType="None">
-				<reportElement positionType="Float" x="411" y="15" width="125" height="30"/>
-				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font size="23" isBold="true"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$P{invoiceNumber}]]></textFieldExpression>
-			</textField>
-			<staticText>
-				<reportElement positionType="Float" x="291" y="15" width="120" height="30"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="24" isBold="true"/>
-				</textElement>
-				<text><![CDATA[INVOICE]]></text>
-			</staticText>
-			<image hyperlinkType="None">
-				<reportElement positionType="Float" x="15" y="6" width="168" height="53"/>
-				<imageExpression class="java.io.File"><![CDATA[$P{entityLogo}]]></imageExpression>
+		<band height="250">
+			<image>
+				<reportElement positionType="Float" x="15" y="6" width="168" height="53" uuid="2b50c314-96c7-43b8-9296-c8eb103d8f2f"/>
+				<imageExpression><![CDATA[$P{entityLogo}]]></imageExpression>
 			</image>
-			<staticText>
-				<reportElement positionType="Float" x="14" y="135" width="73" height="16"/>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="15" y="80" width="270" height="17" uuid="8d34191c-ed37-46ba-852f-19f478dfcdd6"/>
 				<textElement>
-					<font size="11" isBold="false"/>
+					<font size="10"/>
 				</textElement>
-				<text><![CDATA[BILL TO:]]></text>
-			</staticText>
-			<textField isBlankWhenNull="true" hyperlinkType="None">
-				<reportElement positionType="Float" x="15" y="64" width="270" height="17"/>
-				<textElement>
+				<textFieldExpression><![CDATA[$P{entityName}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="20" y="110" width="265" height="50" uuid="08dcf95c-be34-43ce-811b-cf7b3ab8f7ec"/>
+				<textElement markup="html">
 					<font size="12"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$P{entityName}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$P{entityAddress}]]></textFieldExpression>
 			</textField>
-			<textField isBlankWhenNull="true" hyperlinkType="None">
-				<reportElement positionType="Float" x="15" y="83" width="270" height="17"/>
-				<textElement>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="14" y="180" width="366" height="56" uuid="4c93502e-6159-4c47-aa73-5d04604a8dff"/>
+				<textElement markup="html">
 					<font size="12"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$P{entityAddress}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$P{customerOrganization}]]></textFieldExpression>
 			</textField>
-			<textField isBlankWhenNull="true" hyperlinkType="None">
-				<reportElement positionType="Float" x="15" y="103" width="270" height="17"/>
-				<textElement>
-					<font size="12"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[ ($P{entityProvince}!=null && !$P{entityProvince}.trim().equals(""))?$P{entityCity}+", "+ $P{entityProvince}+" "+$P{entityPostalCode}:$P{entityCity}+" "+ $P{entityProvince}+" "+$P{entityPostalCode}]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="true" hyperlinkType="None">
-				<reportElement positionType="Float" x="14" y="153" width="238" height="17"/>
-				<textElement>
-					<font size="12"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$P{customerOrganization}]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="true" hyperlinkType="None">
-				<reportElement positionType="Float" x="14" y="172" width="238" height="16"/>
-				<textElement>
-					<font size="12"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$P{customerAddress}]]></textFieldExpression>
-			</textField>
-			<staticText>
-				<reportElement positionType="Float" x="314" y="57" width="56" height="16"/>
-				<textElement>
-					<font size="12"/>
-				</textElement>
-				<text><![CDATA[Date:]]></text>
-			</staticText>
-			<textField hyperlinkType="None">
-				<reportElement positionType="Float" x="386" y="57" width="150" height="16"/>
-				<textElement>
-					<font size="12"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$P{invoiceDate}]]></textFieldExpression>
-			</textField>
-			<staticText>
-				<reportElement positionType="Float" x="314" y="79" width="66" height="16"/>
-				<textElement>
-					<font size="12" isBold="true"/>
-				</textElement>
-				<text><![CDATA[Due Date:]]></text>
-			</staticText>
-			<textField hyperlinkType="None">
-				<reportElement positionType="Float" x="386" y="79" width="150" height="16"/>
-				<textElement>
-					<font size="12" isBold="true"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$P{invoiceDueDate}]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="true" hyperlinkType="None">
-				<reportElement positionType="Float" x="282" y="153" width="250" height="56"/>
-				<textElement markup="styled">
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="380" y="180" width="168" height="56" uuid="865a9d2d-75cf-4dd0-ab8c-976d07ad8237"/>
+				<textElement textAlignment="Right" markup="html">
 					<font size="11" isItalic="true"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$P{customerMessage1}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$P{customerMessage1}]]></textFieldExpression>
 			</textField>
-			<staticText>
-				<reportElement positionType="Float" x="314" y="101" width="66" height="16"/>
-				<textElement>
-					<font size="12" isBold="true"/>
-				</textElement>
-				<text><![CDATA[Total Due:]]></text>
-			</staticText>
-			<textField evaluationTime="Report" hyperlinkType="None">
-				<reportElement positionType="Float" x="386" y="101" width="150" height="16"/>
-				<textElement>
-					<font size="12" isBold="true"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$P{totalWithTax}]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="true" hyperlinkType="None">
-				<reportElement positionType="Float" x="14" y="191" width="238" height="16"/>
-				<textElement>
-					<font size="12" isBold="true"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[ ($P{customerProvince}!=null && !$P{customerProvince}.trim().equals(""))?$P{customerCity}+", "+ $P{customerProvince}+" "+$P{customerPostalCode}:$P{customerCity}+" "+ $P{customerProvince}+" "+$P{customerPostalCode}]]></textFieldExpression>
-			</textField>
+			<line>
+				<reportElement x="0" y="170" width="550" height="1" uuid="e971d6b1-c842-4869-b7d9-6dcab0d7f80f">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="4.0" lineColor="#CCCCB3"/>
+				</graphicElement>
+			</line>
 		</band>
 	</title>
 	<pageHeader>
-		<band height="46">
-			<rectangle>
-				<reportElement positionType="Float" x="8" y="8" width="540" height="38" backcolor="#C3C3C3"/>
-			</rectangle>
-			<staticText>
-				<reportElement positionType="Float" x="16" y="17" width="40" height="23"/>
-				<textElement textAlignment="Center">
-					<font size="16"/>
+		<band height="43">
+			<line>
+				<reportElement x="0" y="2" width="550" height="1" uuid="3f122cc4-cd57-4b00-8986-b3467f6f8477">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="4.0" lineColor="#CCCCB3"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement positionType="Float" x="0" y="41" width="550" height="1" uuid="3a52226a-103d-4cee-99e9-924cd5b1bc68">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="4.0" lineColor="#CCCCB3"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement positionType="Float" x="183" y="14" width="265" height="15" uuid="572744fc-bb75-4d25-8fa6-77d559144276"/>
+				<textElement>
+					<font size="12" isBold="true"/>
 				</textElement>
-				<text><![CDATA[QTY.]]></text>
-			</staticText>
-			<staticText>
-				<reportElement positionType="Float" x="64" y="17" width="328" height="23"/>
-				<textElement textAlignment="Center">
-					<font size="16"/>
+				<textFieldExpression><![CDATA[$P{desch}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="80" y="14" width="90" height="15" uuid="b4508a0a-b078-46ed-866a-94cba42cbf74">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font size="12" isBold="true"/>
 				</textElement>
-				<text><![CDATA[DESCRIPTION]]></text>
-			</staticText>
-			<staticText>
-				<reportElement positionType="Float" x="415" y="17" width="56" height="23"/>
-				<textElement textAlignment="Center">
-					<font size="16"/>
+				<textFieldExpression><![CDATA[$P{anzahlh}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="3" y="14" width="77" height="15" uuid="1c0e4540-b837-4fc4-84a1-aeecc36d15f1"/>
+				<textElement textAlignment="Right">
+					<font size="12" isBold="true"/>
 				</textElement>
-				<text><![CDATA[PRICE]]></text>
-			</staticText>
-			<staticText>
-				<reportElement positionType="Float" x="482" y="17" width="56" height="23"/>
-				<textElement textAlignment="Center">
-					<font size="16"/>
+				<textFieldExpression><![CDATA[$P{posh}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="448" y="14" width="92" height="15" uuid="2f7f987e-3b82-4bf6-96c5-ca38a8d4f1e7"/>
+				<textElement textAlignment="Right">
+					<font size="12" isBold="true"/>
 				</textElement>
-				<text><![CDATA[TOTAL]]></text>
-			</staticText>
+				<textFieldExpression><![CDATA[$P{neth}]]></textFieldExpression>
+			</textField>
 		</band>
 	</pageHeader>
 	<detail>
-		<band height="29">
-			<rectangle>
-				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="8" y="2" width="539" height="26">
-					<printWhenExpression><![CDATA[new Boolean($F{amount} != null)]]></printWhenExpression>
-				</reportElement>
-			</rectangle>
-			<textField isBlankWhenNull="true" hyperlinkType="None">
-				<reportElement positionType="Float" x="16" y="6" width="30" height="17">
-					<printWhenExpression><![CDATA[new Boolean($F{quantity} != null)]]></printWhenExpression>
+		<band height="27">
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="3" y="6" width="77" height="17" uuid="57fc08ae-fb15-4a44-a585-95621a2e33a3">
+					<printWhenExpression><![CDATA[new Boolean($F{pos} != null)]]></printWhenExpression>
 				</reportElement>
 				<textElement textAlignment="Right">
 					<font size="11"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[(new DecimalFormat("#,##0.##")).format($F{quantity}.doubleValue())]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{pos}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" hyperlinkType="None">
-				<reportElement positionType="Float" x="64" y="6" width="328" height="20"/>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="183" y="6" width="265" height="17" uuid="d904a467-4164-47d2-9965-2a68cd45daed">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
 				<textElement>
 					<font size="11"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{description}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{desc}]]></textFieldExpression>
 			</textField>
-			<textField hyperlinkType="None">
-				<reportElement positionType="Float" x="416" y="6" width="55" height="17">
-					<printWhenExpression><![CDATA[new Boolean($F{price} != null)]]></printWhenExpression>
+			<textField>
+				<reportElement positionType="Float" x="80" y="6" width="90" height="17" uuid="86b2e21f-3612-4d0f-b360-ad943377bb8b">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<printWhenExpression><![CDATA[new Boolean($F{desc} != null)]]></printWhenExpression>
 				</reportElement>
 				<textElement textAlignment="Right">
 					<font size="11"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[(new DecimalFormat("#,##0.00")).format($F{price}.doubleValue())]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{anzahl}]]></textFieldExpression>
 			</textField>
-			<textField hyperlinkType="None">
-				<reportElement positionType="Float" x="481" y="6" width="59" height="17">
-					<printWhenExpression><![CDATA[new Boolean($F{amount} != null)]]></printWhenExpression>
+			<textField>
+				<reportElement positionType="Float" x="450" y="6" width="90" height="17" uuid="06108140-908d-4ff9-bf53-c4d4fb28039b">
+					<printWhenExpression><![CDATA[new Boolean($F{anzahl} != null)]]></printWhenExpression>
 				</reportElement>
 				<textElement textAlignment="Right">
 					<font size="11"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[(new DecimalFormat("#,##0.00")).format($F{amount}.doubleValue())]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{net}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
 	<pageFooter>
-		<band height="34">
-			<textField hyperlinkType="None">
-				<reportElement positionType="Float" x="216" y="10" width="60" height="14"/>
-				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font size="10"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA["Page " + String.valueOf($V{PAGE_NUMBER}) + " of "]]></textFieldExpression>
+		<band height="105">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+			<textField>
+				<reportElement positionType="Float" x="180" y="22" width="200" height="38" uuid="d909b30f-8119-4456-8710-964761dd98e3"/>
+				<textElement markup="html"/>
+				<textFieldExpression><![CDATA[$P{footerpart2}]]></textFieldExpression>
 			</textField>
-			<textField evaluationTime="Report" hyperlinkType="None">
-				<reportElement positionType="Float" x="280" y="10" width="26" height="14"/>
-				<textElement verticalAlignment="Middle">
-					<font size="10"/>
-				</textElement>
-				<textFieldExpression class="java.lang.Integer"><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			<textField>
+				<reportElement positionType="Float" x="380" y="20" width="165" height="40" uuid="a97c94c8-a829-4bf1-82cb-f04be485ea2b"/>
+				<textElement markup="html"/>
+				<textFieldExpression><![CDATA[$P{footerpart3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="0" y="22" width="180" height="38" uuid="be1c0909-3cdb-4ee0-a4da-ac8be861b386"/>
+				<textElement markup="html"/>
+				<textFieldExpression><![CDATA[$P{footerpart1}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement positionType="Float" x="0" y="60" width="550" height="1" forecolor="#CCCCB3" uuid="555c6927-77b5-4e0c-8f89-e3263b85de92">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement positionType="Float" x="0" y="10" width="550" height="1" forecolor="#CCCCB3" uuid="e7e8a5d5-755c-47cf-a85b-9cd8cdaeb2c7"/>
+			</line>
+			<textField>
+				<reportElement x="230" y="70" width="140" height="30" uuid="7cafbba4-ae4d-4635-9b6e-23c9bce1dc46"/>
+				<textElement textAlignment="Right" verticalAlignment="Justified"/>
+				<textFieldExpression><![CDATA["Seite " + $V{PAGE_NUMBER}+"  von " + $V{PAGE_NUMBER}]]></textFieldExpression>
 			</textField>
 		</band>
 	</pageFooter>
 	<summary>
-		<band height="78">
-			<textField isBlankWhenNull="true" hyperlinkType="None">
-				<reportElement positionType="Float" x="12" y="33" width="531" height="36"/>
-				<textElement textAlignment="Center">
-					<font size="11" isBold="true"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$P{customerMessage2}]]></textFieldExpression>
-			</textField>
-		</band>
+		<band height="78"/>
 	</summary>
 </jasperReport>
