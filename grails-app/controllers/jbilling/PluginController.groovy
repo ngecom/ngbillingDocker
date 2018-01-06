@@ -32,7 +32,9 @@ import com.sapienter.jbilling.server.pluggableTask.admin.*
 import com.sapienter.jbilling.server.util.IWebServicesSessionBean
 import com.sapienter.jbilling.server.util.PreferenceBL
 import com.sapienter.jbilling.server.util.ServerConstants
+
 import grails.converters.JSON
+
 import org.codehaus.groovy.grails.context.support.PluginAwareResourceBundleMessageSource
 import org.codehaus.groovy.grails.web.servlet.mvc.GrailsParameterMap
 import org.hibernate.ObjectNotFoundException
@@ -58,6 +60,7 @@ class PluginController {
     PluggableTaskDAS pluggableTaskDAS
     ViewUtils viewUtils
     BreadcrumbService breadcrumbService;
+	RecentItemService recentItemService;
     
     def index () {
         list();

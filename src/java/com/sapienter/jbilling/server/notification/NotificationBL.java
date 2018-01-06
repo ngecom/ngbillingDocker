@@ -62,8 +62,10 @@ import com.sapienter.jbilling.server.util.ServerConstants;
 import com.sapienter.jbilling.server.util.Context;
 import com.sapienter.jbilling.server.util.PreferenceBL;
 import com.sapienter.jbilling.server.util.Util;
+
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
+
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang.StringUtils;
 import org.apache.velocity.app.VelocityEngine;
@@ -86,12 +88,15 @@ import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 import javax.sql.DataSource;
 import javax.sql.rowset.CachedRowSet;
+
 import java.io.*;
 import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.*;
 
 ;
@@ -881,15 +886,32 @@ public class NotificationBL extends ResultList implements NotificationSQL {
             HashMap<String, Object> parameters = new HashMap<String, Object>();
             
             // add all the invoice data
-            parameters.put("invoiceNumber", printable(invoice.getPublicNumber()));
-            parameters.put("invoiceId", invoice.getId());
-            parameters.put("entityName", printable(from.getOrganizationName()));
-            parameters.put("entityAddress", printable(from.getAddress1()));
+//            parameters.put("invoiceNumber", printable(invoice.getPublicNumber()));
+//            parameters.put("invoiceId", invoice.getId());
+//            parameters.put("invoiceDate", Util.formatDate(invoice.getCreateDatetime(), invoice.getUserId()));
+//            parameters.put("invoiceDueDate", Util.formatDate(invoice.getDueDate(), invoice.getUserId()));
+            String kundennummer = "Kundennummer: "+username+"<br>"
+                    + "Rechnungsnummer: "+printable(invoice.getPublicNumber())+"<br>"
+                    + "Datum: "+Util.formatDate(invoice.getDueDate(), invoice.getUserId())+"<br>"
+                    + "Periode: "+Util.formatDate(invoice.getCreateDatetime(), invoice.getUserId());
+
+            parameters.put("customerMessage1", kundennummer);
+            //parameters.put("entityName", printable(from.getOrganizationName()));
+            parameters.put("entityName", "Consertis GmbH | Am Gestade 3 | 1010 Wien");
+            //parameters.put("entityAddress", printable(from.getAddress1()));
+            parameters.put("entityAddress", "Bernhard Schiffer <br>"
+                    + "Ferdinandstraße 6/6 <br>"
+                    + "1020 Wien");
             parameters.put("entityAddress2", printable(from.getAddress2()));
             parameters.put("entityPostalCode", printable(from.getPostalCode()));
             parameters.put("entityCity", printable(from.getCity()));
             parameters.put("entityProvince", printable(from.getStateProvince()));
-            parameters.put("customerOrganization", printable(to.getOrganizationName()));
+            //parameters.put("customerOrganization", printable(to.getOrganizationName()));
+
+            String custOrg = "<b>Gebührenabrechnung für die Rufnummer <br>12148367</b>";
+            parameters.put("customerOrganization", custOrg);
+
+        	parameters.put("customerOrganization", custOrg);	
             parameters.put("customerName", printable(to.getFirstName(), to.getLastName()));
             parameters.put("customerAddress", printable(to.getAddress1()));
             parameters.put("customerAddress2", printable(to.getAddress2()));
@@ -899,20 +921,29 @@ public class NotificationBL extends ResultList implements NotificationSQL {
             parameters.put("customerUsername", username);
             parameters.put("customerPassword", password);
             parameters.put("customerId", printable(invoice.getUserId().toString()));
-            parameters.put("invoiceDate", Util.formatDate(invoice.getCreateDatetime(), invoice.getUserId()));
-            parameters.put("invoiceDueDate", Util.formatDate(invoice.getDueDate(), invoice.getUserId()));
+            
 
             // customer message
             LOG.debug("m1 = %s m2 = %s", message1, message2);
-            parameters.put("customerMessage1", printable(message1));
+            //parameters.put("customerMessage1", printable(message1));
             parameters.put("customerMessage2", printable(message2));
+            
+            parameters.put("posh", "Pos");
+            parameters.put("anzahlh", "Anzahl");
+            parameters.put("desch", "Beschreibung");
+            parameters.put("neth", "Netto");
 
             // invoice notes stripped of html line breaks
-            String notes = invoice.getCustomerNotes();
-            if (notes != null) {
-                notes = notes.replaceAll("<br/>", "\r\n");
-            }
-            parameters.put("notes", printable(notes));
+//            String notes = invoice.getCustomerNotes();
+//            if (notes != null) {
+//                notes = notes.replaceAll("<br/>", "\r\n");
+//            }
+//            parameters.put("notes", printable(notes));
+            String notes = "Bitte Betrag bis zum 14.09.2017 auf folgendes Konto einzahlen:<br>"
+                    + "Consertis GmbH IBAN: AT23 3200 0000 1040 6411 BIC: RLNWATWW <br>"
+                    + "UNBEDINGT RECHNUNGSNUMMER ANGEBEN: AS-2017-2932.";
+
+            parameters.put("notes", notes);
 
             // now some info about payments
             try {
@@ -972,6 +1003,8 @@ public class NotificationBL extends ResultList implements NotificationSQL {
             // Collections.copy(lines, invoice.getInvoiceLines());
 
             List<InvoiceLineDTO> linesRemoved = new ArrayList<InvoiceLineDTO>();
+            int serialNo =1;
+            ArrayList<TransDetailsBean> list = new ArrayList<>();
             for (InvoiceLineDTO line : lines) {
                 // log.debug("Processing line " + line);
                 // process the tax, if this line is one
@@ -988,6 +1021,19 @@ public class NotificationBL extends ResultList implements NotificationSQL {
                 } else if (line.getIsPercentage() != null && line.getIsPercentage().intValue() == 1) {
                     // if the line is a percentage, remove the price
                     line.setPrice(null);
+                }else{
+                	if(!"TOTAL".equals(line.getDescription())){
+                	TransDetailsBean db1 = new TransDetailsBean();
+                    db1.setPos(""+serialNo);
+                    db1.setAnzahl(""+line.getQuantity().intValue());
+                    db1.setDesc(line.getDescription());
+                    ResourceBundle bundle = ResourceBundle.getBundle("entityNotifications", locale);
+                    NumberFormat format = NumberFormat.getNumberInstance(locale);
+                    ((DecimalFormat) format).applyPattern(bundle.getString("format.float"));
+                    db1.setNet(""+format.format(line.getAmount().doubleValue()));
+                    list.add(db1);
+                    serialNo++;
+                	}
                 }
             }
             lines.removeAll(linesRemoved); // removed them once out of the loop. Otherwise it will throw
@@ -1008,12 +1054,21 @@ public class NotificationBL extends ResultList implements NotificationSQL {
                     invoice.getUserId(), invoice.getCurrency().getId(), false));
             parameters.put("carriedBalance", Util.formatMoney(invoice.getCarriedBalance(),
                     invoice.getUserId(), invoice.getCurrency().getId(), false));
+            
+            parameters.put("total_desc", "Zwischensumme netto:");
+            parameters.put("tax_desc", "20% USt.:");
+            parameters.put("grand_total_desc", "Gesamt brutto:");
 
             LOG.debug("Parameter tax = %s totalWithTax = %s totalWithoutTax = %s balance = %s"
                     , parameters.get("tax")
                     , parameters.get("totalWithTax")
                     , parameters.get("totalWithoutTax")
                     , parameters.get("balance"));
+            
+            parameters.put("footerpart1", "Consertis GmbH <br>Am Gestade 3, 1010 Wien<br>UID: ATU69303504, FN: 428591g");
+            parameters.put("footerpart2", "Tel : +431398398, FAX DW -399<br>Email: office@consertis.at<br>Web: www.consertis.at");
+            parameters.put("footerpart3", "Consertis GmbH <br>Am Gestade 3, 1010 Wien<br>UID: ATU69303504, FN");
+
 
             // set report locale
             parameters.put(JRParameter.REPORT_LOCALE, locale);
@@ -1034,7 +1089,7 @@ public class NotificationBL extends ResultList implements NotificationSQL {
                 DataSourceUtils.releaseConnection(connection, dataSource);
             } else {
                 JRBeanCollectionDataSource data =
-                        new JRBeanCollectionDataSource(lines);
+                        new JRBeanCollectionDataSource(list);
                 report = JasperFillManager.fillReport(stream, parameters, data);
             }
 

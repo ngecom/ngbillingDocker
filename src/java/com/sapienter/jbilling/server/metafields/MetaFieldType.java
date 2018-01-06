@@ -35,5 +35,17 @@ public enum MetaFieldType {
     
     PAYMENT_CARD_NUMBER,
     GATEWAY_KEY,
-    CC_TYPE
+    CC_TYPE,
+    
+    ABAR_NUMBER,
+    CREDIT_MEMO_REMARKS,
+    
+    CC_CARDHOLDER_NAME,
+    CC_CREDIT_CARD_NUMBER,
+    CC_EXPIRY_DATE,
+    CC_CVV,
+    CC_STREET,
+    CC_CITY,
+    CC_STATE,
+    CC_ZIPCODE
 }

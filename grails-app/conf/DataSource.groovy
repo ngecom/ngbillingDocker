@@ -25,7 +25,7 @@ You may download the latest source from webdataconsulting.github.io.
 import org.codehaus.groovy.grails.orm.hibernate.cfg.GrailsAnnotationConfiguration
 
 def dbUser = System.getenv("JBILLING_DB_USER") ?: "postgres"
-def dbName = System.getenv("JBILLING_DB_NAME") ?: "ngbillingbase"
+def dbName = System.getenv("JBILLING_DB_NAME") ?: "concertisdev"
 def dbHost = System.getenv("JBILLING_DB_HOST") ?: "localhost"
 
 dataSource {

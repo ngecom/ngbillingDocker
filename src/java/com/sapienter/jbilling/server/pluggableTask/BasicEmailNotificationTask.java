@@ -183,9 +183,9 @@ public class BasicEmailNotificationTask extends PluggableTask
             }
             // required for SMTP servers that use SSL authentication, 
             // e.g., Gmail's SMTP servers
-            sender.getJavaMailProperties().setProperty(
-                    "mail.smtp.socketFactory.class",
-                    "javax.net.ssl.SSLSocketFactory");
+//            sender.getJavaMailProperties().setProperty(
+//                    "mail.smtp.socketFactory.class",
+//                    "javax.net.ssl.SSLSocketFactory");
         }
 
         MimeMessage mimeMsg = sender.createMimeMessage();

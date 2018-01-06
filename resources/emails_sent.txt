@@ -42,3 +42,53 @@ Subject: Billing Statement from ngecom
 Body: 
 Attachement: null
         ----------------------        
+Date: Thu Jan 04 23:22:04 GST 2018
+To: rksahadevan@gmail.com
+From: admin@jbilling.com
+Subject: Billing Statement from CONSERTIS
+Body: Dear RamiReddy Velagacharla,
+
+New Statement Available:
+
+Account: Itron India Private Limited
+Total amount due: EUR 200.00
+
+You can view it by logging in to:
+http://www.concertis.de/
+
+After logging in, please click on the Invoices menu option to see all your invoices.  You can also see your payment history, your current purchase orders, as well as update your payment information and submit online payments.
+
+Thank you,
+
+Billing Department
+CONSERTIS
+Tel: (404) 410-2700
+
+"Cloud Telecommunications"
+Attachement: null
+        ----------------------        
+Date: Thu Jan 04 23:23:52 GST 2018
+To: rksahadevan@gmail.com
+From: admin@jbilling.com
+Subject: Billing Statement from CONSERTIS
+Body: Dear RamiReddy Velagacharla,
+
+New Statement Available:
+
+Account: Itron India Private Limited
+Total amount due: EUR 200.00
+
+You can view it by logging in to:
+http://www.concertis.de/
+
+After logging in, please click on the Invoices menu option to see all your invoices.  You can also see your payment history, your current purchase orders, as well as update your payment information and submit online payments.
+
+Thank you,
+
+Billing Department
+CONSERTIS
+Tel: (404) 410-2700
+
+"Cloud Telecommunications"
+Attachement: null
+        ----------------------        

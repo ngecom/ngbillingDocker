@@ -279,11 +279,10 @@ You may download the latest source from webdataconsulting.github.io.
                 <a href="${createLink (controller: 'payment', action: 'edit', params: [userId: user?.id, invoiceId: selected.id])}" class="submit payment">
                     <span><g:message code="button.invoice.pay"/></span>
                 </a>
-
-            <a href="${createLink (action: 'downloadPdf', id: selected.id)}" class="submit save">
+         </g:if>
+           <a href="${createLink (action: 'downloadPdf', id: selected.id)}" class="submit save">
                 <span><g:message code="button.invoice.downloadPdf"/></span>
             </a>
-         </g:if>
         </div>
 
         <div class="row">

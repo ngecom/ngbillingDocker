@@ -53,7 +53,7 @@ import com.sapienter.jbilling.server.metafields.DataType
  * @since 20.10.11
  */
 @Secured(['isAuthenticated()'])
-class MetaFieldsController {
+class MetaFieldsController { 
 
     static scope = "prototype"
 
