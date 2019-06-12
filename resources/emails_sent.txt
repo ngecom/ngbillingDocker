@@ -42,53 +42,33 @@ Subject: Billing Statement from ngecom
 Body: 
 Attachement: null
         ----------------------        
-Date: Thu Jan 04 23:22:04 GST 2018
+Date: Mon Jun 10 22:40:31 GST 2019
 To: rksahadevan@gmail.com
 From: admin@jbilling.com
-Subject: Billing Statement from CONSERTIS
-Body: Dear RamiReddy Velagacharla,
+Subject: Initial Credentials
+Body: Hello Rakesh Sahadevan,
 
-New Statement Available:
+Welcome to jBilling!.
 
-Account: Itron India Private Limited
-Total amount due: EUR 200.00
+Please follow this link to set your credentials:
 
-You can view it by logging in to:
-http://www.concertis.de/
+http://www.yourcompany.com/ngbilling/resetPassword/changePassword?token=66oJc6GCLogs4fOSZBEnsLayhCF3pdDz
 
-After logging in, please click on the Invoices menu option to see all your invoices.  You can also see your payment history, your current purchase orders, as well as update your payment information and submit online payments.
-
-Thank you,
-
-Billing Department
-CONSERTIS
-Tel: (404) 410-2700
-
-"Cloud Telecommunications"
+Admin:	Digital Compass
 Attachement: null
         ----------------------        
-Date: Thu Jan 04 23:23:52 GST 2018
-To: rksahadevan@gmail.com
+Date: Tue Jun 11 19:33:49 GST 2019
+To: sru.rak@gmail.com
 From: admin@jbilling.com
-Subject: Billing Statement from CONSERTIS
-Body: Dear RamiReddy Velagacharla,
+Subject: Initial Credentials
+Body: Hello Sruthi Rakesh,
 
-New Statement Available:
+Welcome to jBilling!.
 
-Account: Itron India Private Limited
-Total amount due: EUR 200.00
+Please follow this link to set your credentials:
 
-You can view it by logging in to:
-http://www.concertis.de/
+http://www.yourcompany.com/ngbilling/resetPassword/changePassword?token=tvbPUW6I3NaUWIJCHbPR0MEHBu4cCreX
 
-After logging in, please click on the Invoices menu option to see all your invoices.  You can also see your payment history, your current purchase orders, as well as update your payment information and submit online payments.
-
-Thank you,
-
-Billing Department
-CONSERTIS
-Tel: (404) 410-2700
-
-"Cloud Telecommunications"
+Admin:	ngecom
 Attachement: null
         ----------------------        

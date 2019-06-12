@@ -63,7 +63,7 @@ target(packageRelease: "Builds the war and packages all the necessary config fil
     zip(filesonly: false, update: false, destfile: packageName) {
         zipfileset(dir: resourcesDir, prefix: "jbilling/resources")
         zipfileset(dir: targetDir, includes: "${grailsAppName}.jar", prefix: "jbilling/resources/api")
-        zipfileset(dir: javaDir, includes: "jbilling.properties", fullpath: "jbilling/jbilling.properties")
+        zipfileset(dir: javaDir, includes: "ngbilling.properties", fullpath: "jbilling/ngbilling.properties")
         zipfileset(dir: configDir, includes: "Config.groovy", fullpath: "jbilling/${grailsAppName}-Config.groovy")
         zipfileset(dir: configDir, includes: "DataSource.groovy", fullpath: "jbilling/${grailsAppName}-DataSource.groovy")
         zipfileset(dir: targetDir, includes: "${grailsAppName}.war")

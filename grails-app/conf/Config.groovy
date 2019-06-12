@@ -27,15 +27,15 @@ import org.springframework.web.context.request.RequestContextHolder
 import org.springframework.web.context.request.RequestAttributes
 
 /*
-    Load configuration files from the set "JBILLING_HOME" path (provided as either
+    Load configuration files from the set "NGBILLING_HOME" path (provided as either
     an environment variable or a command line system property). External configuration
     files will override default settings.
  */
 
-def appHome = System.getProperty("JBILLING_HOME") ?: System.getenv("JBILLING_HOME")
+def appHome = System.getProperty("NGBILLING_HOME") ?: System.getenv("NGBILLING_HOME")
 
 if (appHome) {
-    println "Loading configuration files from JBILLING_HOME = ${appHome}"
+    println "Loading configuration files from NGBILLING_HOME = ${appHome}"
     grails.config.locations = [
             "file:${appHome}/${appName}-Config.groovy",
             "file:${appHome}/${appName}-DataSource.groovy"
@@ -50,8 +50,8 @@ if (appHome) {
                 "file:${appHome.canonicalPath}/${appName}-DataSource.groovy"
         ]
 
-        println "Setting JBILLING_HOME to ${appHome.canonicalPath}"
-        System.setProperty("JBILLING_HOME", appHome.canonicalPath)
+        println "Setting NGBILLING_HOME to ${appHome.canonicalPath}"
+        System.setProperty("NGBILLING_HOME", appHome.canonicalPath)
 
     } else {
         println "Loading configuration files from classpath"

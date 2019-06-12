@@ -145,7 +145,7 @@ class PreferencesTagLib {
     /**
      * Prints the tag body if the jbilling.properties setting is equal to the given value.
      *
-     * @param property property key of the value from jbilling.properties
+     * @param property property key of the value from ngbilling.properties
      * @param value value to compare
      */
     def settingEquals = { attrs, body ->

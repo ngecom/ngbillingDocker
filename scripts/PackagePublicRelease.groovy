@@ -59,14 +59,14 @@ target(packageSource: "Packages the source code.") {
             exclude(name: "**/*.iml")
             exclude(name: ".idea/")
             exclude(name: ".settings/")
-            exclude(name: "**/jbilling.properties")
+            exclude(name: "**/ngbilling.properties")
 
             exclude(name: "**/.git/")
             exclude(name: ".gitignore")
             exclude(name: ".gitattributes")
         }
 
-        zipfileset(file: "${javaDir}/jbilling.properties.sample", fullpath: "${releaseName}/src/java/jbilling.properties")
+        zipfileset(file: "${javaDir}/ngbilling.properties.sample", fullpath: "${releaseName}/src/java/ngbilling.properties")
     }
 }
 
@@ -130,7 +130,7 @@ target(updateImage: "Updates the jbilling image with the current release artifac
 
     // copy configuration files
     // don't copy DataSource, the reference tomcat install uses HSQLDB
-    copy(file: "${javaDir}/jbilling.properties", tofile: "${jbillingHome}/jbilling.properties", overwrite: true)
+    copy(file: "${javaDir}/ngbilling.properties", tofile: "${jbillingHome}/ngbilling.properties", overwrite: true)
     copy(file: "${configDir}/Config.groovy", tofile: "${jbillingHome}/${grailsAppName}-Config.groovy", overwrite: true)
 
     // copy jbilling.war

@@ -60,7 +60,7 @@ public class AuthenticationUserService {
     }
 
 	/**
-	 * check if user's encryption scheme and jbilling.properties encryption scheme is same or different
+	 * check if user's encryption scheme and ngbilling.properties encryption scheme is same or different
 	 */
 	public Boolean isEncryptionSchemeSame(Integer entityId, String userName, Integer schemeId){
 		UserBL bl = new UserBL(userName, entityId);

@@ -1,7 +1,6 @@
 
 
 //import com.sapienter.jbilling.common.Util
-import org.apache.log4j.lf5.util.Resource
 
 /*
  jBilling - The Enterprise Open Source Billing System
@@ -46,22 +45,22 @@ replaceLicenseTokens = { fileName ->
 
 copyAndReplaceLicenseTokens = { dirName ->
     ant.mkdir(dir: dirName)
-    ant.copy(file: "${basedir}/src/java/jbilling.properties", toDir: dirName, overwrite: "yes", verbose: "yes")
-    replaceLicenseTokens("${dirName}/jbilling.properties")
+    ant.copy(file: "${basedir}/src/java/ngbilling.properties", toDir: dirName, overwrite: "yes", verbose: "yes")
+    replaceLicenseTokens("${dirName}/ngbilling.properties")
 }
 
 
-target(setLicense: "Set the license key in jbilling.properties with whatever is in license.txt") {
+target(setLicense: "Set the license key in ngbilling.properties with whatever is in license.txt") {
 
     ant.available(file: "license.txt", property: "licenseAvailable")
 
     if (ant.project.getProperty("licenseAvailable")) {
-        println "Setting license in jbilling.properties from license.txt"
+        println "Setting license in ngbilling.properties from license.txt"
 
         ant.loadproperties(srcFile:"license.txt")
 
         if (! isInternalLicensee(ant.project.getProperty("licensee"), ant.project.getProperty("licenseKey"))) {
-            replaceLicenseTokens("${basedir}/src/java/jbilling.properties")
+            replaceLicenseTokens("${basedir}/src/java/ngbilling.properties")
         }
         copyAndReplaceLicenseTokens("${projectWorkDir}/resources/") // for "grails run-app"
     }

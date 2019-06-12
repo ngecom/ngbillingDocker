@@ -32,7 +32,7 @@ You may download the latest source from webdataconsulting.github.io.
 
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 
-<title><g:layoutTitle default="jBilling" /></title>
+<title><g:layoutTitle default="NGBilling" /></title>
 
 <link rel="shortcut icon" href="${resource(dir:'images', file:'favicon.ico')}" type="image/x-icon" />
 

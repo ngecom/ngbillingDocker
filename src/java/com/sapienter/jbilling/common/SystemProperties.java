@@ -34,13 +34,13 @@ import java.util.Properties;
 
 /**
  * This is a Singleton call that provides the system properties from
- * the jbilling.properties file
+ * the ngbilling.properties file
  */
 public class SystemProperties {
     private static final FormatLogger LOG = new FormatLogger(SystemProperties.class);
 
-    private static final String JBILLING_HOME = "JBILLING_HOME";
-    private static final String PROPERTIES_FILE = "jbilling.properties";
+    private static final String NGBILLING_HOME = "NGBILLING_HOME";
+    private static final String PROPERTIES_FILE = "ngbilling.properties";
     private static final String RESOURCES_DIR = "resources";
     private static final String BASE_DIR_PROPERTY = "base_dir";
 
@@ -86,7 +86,7 @@ public class SystemProperties {
      * Returns the jBilling home path where resources and configuration files
      * can be found.
      * <p>
-     * The environment variable JBILLING_HOME and system property JBILLING_HOME are examined
+     * The environment variable NGBILLING_HOME and system property NGBILLING_HOME are examined
      * for this value, with precedence given to system properties set via command line arguments.
      * <p>
      * If no jBilling home path is set, properties will be loaded from the classpath.
@@ -94,10 +94,10 @@ public class SystemProperties {
      * @return jbilling home path
      */
     public static String getJBillingHome() {
-        String jbillingHome = System.getProperty(JBILLING_HOME);
+        String jbillingHome = System.getProperty(NGBILLING_HOME);
 
         if (jbillingHome == null) {
-            jbillingHome = System.getenv(JBILLING_HOME);
+            jbillingHome = System.getenv(NGBILLING_HOME);
         }
 
         return jbillingHome;
@@ -106,13 +106,13 @@ public class SystemProperties {
     /**
      * Returns the path to the jBilling resources directory.
      * <p>
-     * The resources directory is always assumed to be located in JBILLING_HOME. If JBILLING_HOME is not
+     * The resources directory is always assumed to be located in NGBILLING_HOME. If NGBILLING_HOME is not
      * set, this method will return a relative path as the default location for the resources directory.
      *
      * @return path to the resources directory
      */
     public String getJBillingResourcesDir() {
-        // try JBILLING_HOME
+        // try NGBILLING_HOME
         String jbillingHome = getJBillingHome();
         if (jbillingHome != null) {
             return jbillingHome + File.separator + RESOURCES_DIR + File.separator;
@@ -138,7 +138,7 @@ public class SystemProperties {
     }
 
     /**
-     * Returns the path to the jbilling.properties file.
+     * Returns the path to the ngbilling.properties file.
      *
      * @return properties file
      */
@@ -156,13 +156,13 @@ public class SystemProperties {
     }
 
     public String get(String key) throws Exception {
-        // "base_dir" should always resolve to the JBILLING_HOME resources dir
-        // this value is no longer part of jbilling.properties
+        // "base_dir" should always resolve to the NGBILLING_HOME resources dir
+        // this value is no longer part of ngbilling.properties
         if (BASE_DIR_PROPERTY.equals(key)) {
             return resourcesDir;
         }
 
-        // get value from jbilling.properties
+        // get value from ngbilling.properties
         String value = prop.getProperty(key);
 
         if (value == null)

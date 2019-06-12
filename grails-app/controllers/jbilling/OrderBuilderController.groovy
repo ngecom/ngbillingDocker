@@ -24,73 +24,36 @@
 
 package jbilling
 
-import com.sapienter.jbilling.server.item.AssetStatusDTOEx
-
-import com.sapienter.jbilling.server.item.ItemDTOEx
-import java.math.RoundingMode
-import java.util.logging.SimpleFormatter;
-import java.math.RoundingMode
-import java.util.List
-import java.util.regex.Pattern
-
-import com.sapienter.jbilling.server.order.OrderBL;
-import com.sapienter.jbilling.server.order.db.OrderDTO;
-import com.sapienter.jbilling.server.order.db.OrderLineDTO;
-import com.sapienter.jbilling.server.process.ConfigurationBL;
-import com.sapienter.jbilling.server.process.db.BillingProcessConfigurationDTO;
-import com.sapienter.jbilling.server.user.db.MainSubscriptionDTO;
-import com.sapienter.jbilling.server.user.db.UserDAS
-import com.sapienter.jbilling.server.item.AssetReservationBL
-import com.sapienter.jbilling.server.item.ItemDTOEx;
-import com.sapienter.jbilling.server.item.ItemTypeBL
-import com.sapienter.jbilling.server.item.db.AssetDTO
-import com.sapienter.jbilling.server.metafields.db.DataType
-import com.sapienter.jbilling.server.user.db.UserCodeDAS
-import com.sapienter.jbilling.server.util.PreferenceBL
- 
-import grails.plugin.springsecurity.annotation.Secured
-import com.sapienter.jbilling.server.item.db.ItemDTO
-import com.sapienter.jbilling.server.user.db.CompanyDTO
-import com.sapienter.jbilling.server.order.OrderWS
-import com.sapienter.jbilling.server.user.db.UserDTO
-import com.sapienter.jbilling.server.order.*;
-import com.sapienter.jbilling.server.item.db.*;
-import com.sapienter.jbilling.server.order.db.OrderStatusDAS
-import com.sapienter.jbilling.server.order.db.OrderDAS
-import com.sapienter.jbilling.server.order.db.OrderPeriodDTO
-import com.sapienter.jbilling.server.order.db.OrderBillingTypeDTO
-import com.sapienter.jbilling.server.util.ServerConstants
-import com.sapienter.jbilling.server.util.IWebServicesSessionBean;
-import com.sapienter.jbilling.server.util.Util
-import com.sapienter.jbilling.server.user.contact.db.ContactDTO
-import com.sapienter.jbilling.server.order.OrderLineWS
+import com.sapienter.jbilling.client.metafield.MetaFieldBindHelper
 import com.sapienter.jbilling.common.SessionInternalError
+import com.sapienter.jbilling.server.discount.DiscountLineWS
+import com.sapienter.jbilling.server.discount.DiscountableItemWS
+import com.sapienter.jbilling.server.item.*
+import com.sapienter.jbilling.server.item.db.AssetDTO
+import com.sapienter.jbilling.server.item.db.AssetReservationDTO
+import com.sapienter.jbilling.server.item.db.ItemDTO
+import com.sapienter.jbilling.server.item.db.ItemTypeDTO
+import com.sapienter.jbilling.server.metafields.*
+import com.sapienter.jbilling.server.order.*
+import com.sapienter.jbilling.server.order.db.OrderBillingTypeDTO
+import com.sapienter.jbilling.server.order.db.OrderChangeTypeDTO
+import com.sapienter.jbilling.server.order.db.OrderPeriodDTO
 import com.sapienter.jbilling.server.order.db.OrderStatusDTO
+import com.sapienter.jbilling.server.order.validator.OrderHierarchyValidator
 import com.sapienter.jbilling.server.process.db.PeriodUnitDTO
 import com.sapienter.jbilling.server.process.db.ProratingType
-import com.sapienter.jbilling.server.process.db.ProratingType;
-import com.sapienter.jbilling.server.discount.DiscountableItemWS
-import com.sapienter.jbilling.server.discount.DiscountLineWS
-import com.sapienter.jbilling.server.item.CurrencyBL
-import com.sapienter.jbilling.server.item.AssetBL
-import com.sapienter.jbilling.server.metafields.EntityType
-import com.sapienter.jbilling.server.metafields.MetaFieldBL
-import com.sapienter.jbilling.server.metafields.MetaFieldValueWS
-import com.sapienter.jbilling.server.metafields.MetaFieldWS
-import com.sapienter.jbilling.client.metafield.MetaFieldBindHelper
-import com.sapienter.jbilling.server.metafields.DataType
-import com.sapienter.jbilling.server.order.CancellationFeeType
-import com.sapienter.jbilling.server.order.validator.OrderHierarchyValidator
-import com.sapienter.jbilling.server.order.db.OrderChangeStatusDTO
-import com.sapienter.jbilling.server.order.OrderStatusFlag
-import com.sapienter.jbilling.server.order.db.OrderChangeTypeDTO
-
-import org.apache.commons.lang.StringUtils
+import com.sapienter.jbilling.server.user.contact.db.ContactDTO
+import com.sapienter.jbilling.server.user.db.CompanyDTO
+import com.sapienter.jbilling.server.user.db.UserCodeDAS
+import com.sapienter.jbilling.server.user.db.UserDAS
+import com.sapienter.jbilling.server.user.db.UserDTO
+import com.sapienter.jbilling.server.util.IWebServicesSessionBean
+import com.sapienter.jbilling.server.util.ServerConstants
+import com.sapienter.jbilling.server.util.Util
+import grails.plugin.springsecurity.annotation.Secured
 import org.apache.commons.lang.ArrayUtils
 
-import grails.plugin.springsecurity.annotation.Secured
-import grails.plugin.springsecurity.SpringSecurityUtils
-
+import java.math.RoundingMode
 
 /**
  * OrderController

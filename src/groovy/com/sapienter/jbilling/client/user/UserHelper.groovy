@@ -30,6 +30,7 @@ import com.sapienter.jbilling.server.metafields.DataType
 import com.sapienter.jbilling.server.payment.db.PaymentInformationDTO
 import com.sapienter.jbilling.server.payment.db.PaymentMethodTemplateDTO
 import com.sapienter.jbilling.client.authentication.CompanyUserDetails
+import com.sapienter.jbilling.server.user.UserBL
 import com.sapienter.jbilling.server.user.db.UserDTO
 import com.sapienter.jbilling.server.user.partner.PartnerCommissionExceptionWS
 import com.sapienter.jbilling.server.user.partner.PartnerReferralCommissionWS
@@ -141,13 +142,14 @@ class UserHelper {
 
                 //read old password directly from DB. API does not reveal password hashes
                 def oldPassword = UserDTO.get(oldUser.userId).password
+                def userDBObject  = UserDTO.get(oldUser.userId)
 
                 PasswordEncoder passwordEncoder = Context.getBean(Context.Name.PASSWORD_ENCODER)
                 //fake user details so we can verify the customers password
                 //should we move this to the server side validation?
                 CompanyUserDetails userDetails = new CompanyUserDetails(
                         oldUser.getUserName(), oldPassword, true, true, true, true,
-                        Collections.EMPTY_LIST, null, null, oldUser.getMainRoleId(), oldUser.getEntityId(),
+                        Collections.EMPTY_LIST, userDBObject, UserBL.getLocale(userDBObject),userDBObject.getId(), oldUser.getMainRoleId(), oldUser.getEntityId(),
                         oldUser.getCurrencyId(), oldUser.getLanguageId()
                 )
                 if (!passwordEncoder.isPasswordValid(oldPassword, params.oldPassword, userDetails)) {

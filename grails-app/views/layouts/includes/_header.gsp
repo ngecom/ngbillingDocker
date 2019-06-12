@@ -260,29 +260,31 @@ You may download the latest source from webdataconsulting.github.io.
             </g:link>
         </li>
         </sec:ifAnyGranted>
+    <%--
+            <li>
+                <a href="http://www.jbilling.com/services/training" class="training">
+                    <g:message code="topnav.link.training"/>
+                </a>
+            </li>
 
-        <li>
-            <a href="http://www.jbilling.com/services/training" class="training">
-                <g:message code="topnav.link.training"/>
-            </a>
-        </li>
-        <li>
-            <a href="${resource(dir:'manual', file: 'index.html')}" class="help">
-                <g:message code="topnav.link.help"/>
-            </a>
-        </li>
-        <li>
-            <g:link controller='logout' class="logout">
-                <g:message code="topnav.link.logout"/>
-            </g:link>
-        </li>
-    </ul>
+            <li>
+                <a href="${resource(dir:'manual', file: 'index.html')}" class="help">
+                    <g:message code="topnav.link.help"/>
+                </a>
+            </li>
+     --%>
+            <li>
+                <g:link controller='logout' class="logout">
+                    <g:message code="topnav.link.logout"/>
+                </g:link>
+            </li>
+        </ul>
 
-    <div id="navigation">
-        %{
-            def hiddenTabs = []
-        }%
-        <%-- select the current menu item based on the controller name --%>
+        <div id="navigation">
+            %{
+                def hiddenTabs = []
+            }%
+            <%-- select the current menu item based on the controller name --%>
         <ul id="navList">
             <g:each in="${session['user_tabs'].tabConfigurationTabs}" var="tabConfig">
                 <jB:userCanAccessTab tab="${tabConfig.tab}">
