@@ -52,6 +52,7 @@ public class SubscriptionResult extends Result {
     private Date activeSince;
     private Date activeUntil;
     private BigDecimal quantity;
+    private OrderLineDTO orderLineDTO;
 
     private boolean subscribed = false; // default to not subscribed
 
@@ -86,7 +87,7 @@ public class SubscriptionResult extends Result {
             activeSince = line.getPurchaseOrder().getActiveSince();
             activeUntil = line.getPurchaseOrder().getActiveUntil();
             quantity = line.getQuantity();
-
+            setOrderLineDTO(line);
             subscribed = true;
         }
     }
@@ -128,5 +129,13 @@ public class SubscriptionResult extends Result {
     public String toString() {
         return "SubscriptionResult: userId= " + userId + " itemId= " + itemId +
                 " isSubscribed= "+ isSubscribed();
+    }
+
+    public OrderLineDTO getOrderLineDTO() {
+        return orderLineDTO;
+    }
+
+    public void setOrderLineDTO(OrderLineDTO orderLineDTO) {
+        this.orderLineDTO = orderLineDTO;
     }
 }

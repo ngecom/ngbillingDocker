@@ -2747,4 +2747,18 @@ public class UserBL extends ResultList {
                 EventLogger.USER_LOGOUT,null,
                 user.getUserName(), null);
     }
+
+    public List<UserWS> getAllUserWSWithOutContact(Integer entityId) throws SessionInternalError {
+        List<UserWS> userWS = new ArrayList<UserWS>();
+        List<UserDTO> dtos = das.getAllUserDTO(entityId);
+        for (UserDTO userdto : dtos) {
+            if(userdto.getCustomer()==null){
+                continue;
+            }
+            UserDTOEx dto = DTOFactory.getUserDTOExforMediation(userdto);
+            UserWS retValue = new UserWS(dto,null);
+            userWS.add(retValue);
+        }
+        return userWS;
+    }
 }

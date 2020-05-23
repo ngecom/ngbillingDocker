@@ -72,3 +72,33 @@ http://www.yourcompany.com/ngbilling/resetPassword/changePassword?token=tvbPUW6I
 Admin:	ngecom
 Attachement: null
         ----------------------        
+Date: Mon Jun 17 14:03:28 GST 2019
+To: sru.rak@gmail.com
+From: admin@jbilling.com
+Subject: Initial Credentials
+Body: Hello GOWRI RAKESH,
+
+Welcome to jBilling!.
+
+Please follow this link to set your credentials:
+
+http://www.yourcompany.com/ngbilling/resetPassword/changePassword?token=BwFI7SmiQOnq5EiP1RobHbEyaZdAxlVu
+
+Admin:	BasicOrg
+Attachement: null
+        ----------------------        
+Date: Mon Jun 17 14:13:12 GST 2019
+To: priyaviraj83@gmail.com
+From: admin@jbilling.com
+Subject: Initial Credentials
+Body: Hello BusinessCustomer ,
+
+Welcome to jBilling!.
+
+Please follow this link to set your credentials:
+
+http://www.yourcompany.com/ngbilling/resetPassword/changePassword?token=wOWogZ3sytkW0fL8VYVDe7h9g1UmlwLT
+
+Admin:	Asianet
+Attachement: null
+        ----------------------        

@@ -198,4 +198,20 @@ public class DTOFactory {
         return dto;
     }
 
+    public static UserDTOEx getUserDTOExforMediation(UserDTO user) throws SessionInternalError {
+        UserDTOEx dto = new UserDTOEx(user);
+        // get the status
+        dto.setStatusId(user.getStatus().getId());
+        // make sure the currency is set
+        if (dto.getCurrencyId() == null) {
+            // defaults to the one from the entity
+            dto.setCurrency(user.getEntity().getCurrency());
+        }
+        // if this is a customer, add its dto
+        if (user.getCustomer() != null) {
+            dto.setCustomer(user.getCustomer());
+        }
+        return dto;
+    }
+
 }

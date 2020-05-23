@@ -25,7 +25,7 @@ You may download the latest source from webdataconsulting.github.io.
 import org.codehaus.groovy.grails.orm.hibernate.cfg.GrailsAnnotationConfiguration
 
 def dbUser = System.getenv("JBILLING_DB_USER") ?: "postgres"
-def dbName = System.getenv("JBILLING_DB_NAME") ?: "concertisdev"
+def dbName = System.getenv("JBILLING_DB_NAME") ?: "ngbillingbase"
 def dbHost = System.getenv("JBILLING_DB_HOST") ?: "localhost"
 
 dataSource {
@@ -65,7 +65,6 @@ hibernate {
     cache.use_query_cache = true
     cache.region.factory_class = 'net.sf.ehcache.hibernate.EhCacheRegionFactory'
 }
-
 environments {
     development {
         /*hibernate {
@@ -76,35 +75,3 @@ environments {
         }*/
     }
 }
-/*
-environments {
-    development {
-        dataSource {
-            url = "jdbc:postgresql://localhost:5432/jbilling_test"
-        }
-    }
-    test {
-        dataSource {
-            url = "jdbc:postgresql://localhost:5432/jbilling_test"
-        }
-    }
-    production {
-        dataSource {
-            url = "jdbc:postgresql://localhost:5432/jbilling_prod"
-            username = "jbilling"
-            password = "my-password"
-
-            properties {
-               maxActive = -1
-               minEvictableIdleTimeMillis=1800000
-               timeBetweenEvictionRunsMillis=1800000
-               numTestsPerEvictionRun=3
-               testOnBorrow=true
-               testWhileIdle=true
-               testOnReturn=true
-               validationQuery="SELECT 1"
-            }
-        }
-    }
-}
-*/

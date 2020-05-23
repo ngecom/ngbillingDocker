@@ -337,4 +337,15 @@ public class UserDAS extends AbstractDAS<UserDTO> {
         return criteria.list();
     }
 
+    public List<UserDTO> getAllUserDTO(Integer entityId) {
+        Criteria criteria = getSession().createCriteria(UserDTO.class)
+                .createAlias("company", "e")
+                .add(Restrictions.eq("e.id", entityId))
+                .add(Restrictions.eq("deleted", 0));
+        //.createAlias("roles", "r")
+        //.add(Restrictions.eq("r.roleTypeId", CommonConstants.TYPE_CUSTOMER));
+
+        return criteria.list();
+    }
+
 }

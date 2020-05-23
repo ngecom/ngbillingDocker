@@ -59,6 +59,9 @@ public class MediationResult extends Result {
     private final String configurationName;
     private Date eventDate = null;
     private String description = null;
+    private String userName;
+    private int minimumRatingTime;
+    private Integer mainSubscriptionId = null;
     private boolean persist = false; // whether changes are allowed to the DB
     // custom errors go here
     private List<String> errors = new ArrayList<String>(0);
@@ -194,6 +197,27 @@ public class MediationResult extends Result {
     public void setStep(int step) {
         LOG.debug("Now from step %s to step %s id %s record %s", this.step, step, getId(), getRecordKey());
         this.step = step;
+    }
+	public int getMinimumRatingTime() {
+		return minimumRatingTime;
+	}
+
+	public void setMinimumRatingTime(int minimumRatingTime) {
+		this.minimumRatingTime = minimumRatingTime;
+	}
+	public String getUserName() {
+		return userName;
+	}
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+    public Integer getMainSubscriptionId() {
+        return mainSubscriptionId;
+    }
+
+    public void setMainSubscriptionId(Integer mainSubscriptionId) {
+        this.mainSubscriptionId = mainSubscriptionId;
     }
 }
 

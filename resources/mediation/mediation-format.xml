@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE format SYSTEM "mediation.dtd" >
+<format>
+    <field>
+        <name>event_id</name>
+        <type>string</type>
+        <isKey/>
+    </field>
+    <field>
+        <name>event_date</name>
+        <type>date</type>
+    </field>
+    <field>
+        <name>username</name>
+        <type>string</type>
+    </field>
+    <field>
+        <name>description</name>
+        <type>string</type>
+    </field>
+    <field>
+        <name>duration</name>
+        <type>integer</type>
+    </field>
+</format>

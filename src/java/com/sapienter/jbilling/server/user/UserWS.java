@@ -76,6 +76,7 @@ public class UserWS implements WSSecured, Serializable {
     private String userName;
     private int failedAttempts;
     private Integer languageId;
+    private Integer mainSubscriptionId;
 
     @Valid
     private ContactWS contact = null;
@@ -114,6 +115,7 @@ public class UserWS implements WSSecured, Serializable {
     private Integer dueDateUnitId;
     private Integer dueDateValue;
     private Date nextInvoiceDate;
+    private Integer voiceItemId;
 
     @Digits(integer = 12, fraction = 10, message="validation.error.not.a.number")
     private String rechargeThreshold = "-1";
@@ -142,6 +144,60 @@ public class UserWS implements WSSecured, Serializable {
     private List<PaymentInformationWS> paymentInstruments = new ArrayList<PaymentInformationWS>();
     
     public UserWS() {
+    }
+
+    public UserWS(UserDTOEx dto, String empty) {
+        id = dto.getId();
+        currencyId = dto.getCurrencyId();
+        password = dto.getPassword();
+        deleted = dto.getDeleted();
+        createDatetime = dto.getCreateDatetime();
+        lastStatusChange = dto.getLastStatusChange();
+        lastLoginDate = dto.getLastLoginDate();
+        userName = dto.getUserName();
+        failedAttempts = dto.getFailedLoginAttempts();
+        languageId = dto.getLanguageId();
+//        creditCard = dto.getCreditCard() == null ? null : dto.getCreditCard().getOldDTO();
+//        ach = dto.getAch() == null ? null : dto.getAch().getOldDTO();
+        role = dto.getMainRoleStr();
+        mainRoleId = dto.getMainRoleId();
+        language = dto.getLanguageStr();
+        status = dto.getStatusStr();
+        role = dto.getMainRoleStr();
+        statusId = dto.getStatusId();
+        subscriberStatusId = dto.getSubscriptionStatusId();
+
+        if (dto.getCustomer() != null) {
+            customerId = dto.getCustomer().getId();
+            partnerId = (dto.getCustomer().getPartner() == null) ? null : dto.getCustomer().getPartner().getId();
+            parentId = (dto.getCustomer().getParent() == null) ? null : dto.getCustomer().getParent().getBaseUser().getId();
+            isParent = dto.getCustomer().getIsParent() != null && dto.getCustomer().getIsParent().equals(1);
+            invoiceChild = dto.getCustomer().getInvoiceChild() != null && dto.getCustomer().getInvoiceChild().equals(1);
+            excludeAgeing = dto.getCustomer().getExcludeAging() == 1;
+            childIds = new Integer[dto.getCustomer().getChildren().size()];
+            int index = 0;
+
+
+            setDynamicBalance(dto.getCustomer().getDynamicBalance());
+            setRechargeThreshold(dto.getCustomer().getRechargeThreshold());
+            setCreditLimit(dto.getCustomer().getCreditLimit());
+            setAutoRecharge(dto.getCustomer().getAutoRecharge());
+
+            //   setCustomerNotes(dto.getCustomer().getCustomerNotes());
+            setAutomaticPaymentType(dto.getCustomer().getAutoPaymentType());
+
+            dueDateUnitId = dto.getCustomer().getDueDateUnitId();
+            dueDateValue = dto.getCustomer().getDueDateValue();
+        }
+
+        blacklistMatches = dto.getBlacklistMatches() != null ? dto.getBlacklistMatches().toArray(new String[dto.getBlacklistMatches().size()]) : null;
+        userIdBlacklisted = dto.getUserIdBlacklisted();
+
+        if (null != dto.getCompany()) {
+            companyName= dto.getCompany().getDescription();
+        }
+
+        setOwingBalance(dto.getBalance());
     }
 
     public int getId() {
@@ -703,6 +759,22 @@ public class UserWS implements WSSecured, Serializable {
 
     public void setCreateCredentials(boolean createCredentials) {
         this.createCredentials = createCredentials;
+    }
+
+    public Integer getVoiceItemId() {
+        return voiceItemId;
+    }
+
+    public void setVoiceItemId(Integer voiceItemId) {
+        this.voiceItemId = voiceItemId;
+    }
+
+    public Integer getMainSubscriptionId() {
+        return mainSubscriptionId;
+    }
+
+    public void setMainSubscriptionId(Integer mainSubscriptionId) {
+        this.mainSubscriptionId = mainSubscriptionId;
     }
 
     @Override

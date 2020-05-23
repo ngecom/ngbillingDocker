@@ -45,8 +45,9 @@ beans = {
         acquireIncrement = 2
         initialPoolSize = 10
         minPoolSize = 10
-        maxPoolSize = 50
+        maxPoolSize = 100
         maxIdleTime = 300
+        maxIdleTimeExcessConnections=300
         checkoutTimeout = 10000
 
         /*
