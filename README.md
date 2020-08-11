@@ -172,5 +172,5 @@ OpenSource Next Generation Billing and Rating platform for subscription billing,
    * Source Code request - info@ngecom.com
    * Visit - http://www.ngbilling.com/
    * Customizations and Operational Support - info@ngecom.com
-   * Feasibility of Analyzing usecases to identify customization required or not- rksahadevan@gmail.com
+   * Feasibility of Analyzing usecases to identify customization required or not- info@ngecom.com
    * Free Support - https://groups.google.com/forum/#!forum/ngbilling
