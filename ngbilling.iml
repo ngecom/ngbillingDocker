@@ -2,128 +2,63 @@
 <module type="JAVA_MODULE" version="4">
   <component name="FacetManager">
     <facet type="Spring" name="Spring">
-      <configuration />
+      <configuration>
+        <fileset id="Grails" name="Grails" removed="false">
+          <file>file://$MODULE_DIR$/web-app/WEB-INF/applicationContext.xml</file>
+          <file>file://$MODULE_DIR$/grails-app/conf/spring/resources.xml</file>
+        </fileset>
+      </configuration>
     </facet>
     <facet type="web" name="GrailsWeb">
       <configuration>
         <webroots>
-          <root url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/resources-1.2.8/web-app" relative="/" />
-          <root url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/jquery-1.11.1/web-app" relative="/" />
-          <root url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/spring-security-core-2.0-RC4/grails-app/views" relative="/" />
-          <root url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/cookie-0.51/web-app" relative="/" />
-          <root url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/remote-pagination-0.4.8/web-app" relative="/" />
-          <root url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/jquery-ui-1.10.4/web-app" relative="/" />
+          <root url="file://$MODULE_DIR$/web-app" relative="/" />
+          <root url="file://$MODULE_DIR$/grails-app/views" relative="/" />
         </webroots>
         <sourceRoots>
-          <root url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/cookie-0.51/grails-app/i18n" />
-          <root url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/cookie-0.51/grails-app/services" />
-          <root url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/cookie-0.51/grails-app/taglib" />
-          <root url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/cxf-2.0.1/src/java" />
-          <root url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/cxf-2.0.1/src/groovy" />
-          <root url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/hibernate-3.6.10.14/src/java" />
-          <root url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/hibernate-3.6.10.14/grails-app/i18n" />
-          <root url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/jquery-1.11.1/src/groovy" />
-          <root url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/jquery-1.11.1/grails-app/services" />
-          <root url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/jquery-1.11.1/grails-app/taglib" />
-          <root url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/jquery-ui-1.10.4/grails-app/taglib" />
-          <root url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/remote-pagination-0.4.8/grails-app/i18n" />
-          <root url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/remote-pagination-0.4.8/grails-app/taglib" />
-          <root url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/remoting-1.3/src/java" />
-          <root url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/remoting-1.3/src/groovy" />
-          <root url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/resources-1.2.8/src/java" />
-          <root url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/resources-1.2.8/src/groovy" />
-          <root url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/resources-1.2.8/grails-app/i18n" />
-          <root url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/resources-1.2.8/grails-app/taglib" />
-          <root url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/spring-security-core-2.0-RC4/src/java" />
-          <root url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/spring-security-core-2.0-RC4/src/groovy" />
-          <root url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/spring-security-core-2.0-RC4/grails-app/i18n" />
-          <root url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/spring-security-core-2.0-RC4/grails-app/controllers" />
-          <root url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/spring-security-core-2.0-RC4/grails-app/services" />
-          <root url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/spring-security-core-2.0-RC4/grails-app/taglib" />
-          <root url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/tomcat8-8.0.5/src/java" />
-          <root url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/tomcat8-8.0.5/src/groovy" />
-          <root url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/webflow-2.1.0/src/groovy" />
-          <root url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/webxml-1.4.1/src/groovy" />
+          <root url="file://$MODULE_DIR$/src/java" />
+          <root url="file://$MODULE_DIR$/grails-app/utils" />
+          <root url="file://$MODULE_DIR$/src/groovy" />
+          <root url="file://$MODULE_DIR$/grails-app/i18n" />
+          <root url="file://$MODULE_DIR$/grails-app/controllers" />
+          <root url="file://$MODULE_DIR$/grails-app/domain" />
+          <root url="file://$MODULE_DIR$/grails-app/services" />
+          <root url="file://$MODULE_DIR$/grails-app/taglib" />
         </sourceRoots>
       </configuration>
     </facet>
     <facet type="hibernate" name="Hibernate">
       <configuration>
         <datasource-map>
+          <unit-entry name="Gorm" />
+          <unit-entry name="grails-app:conf:hibernate:hibernate.cfg.xml" />
           <unit-entry name="sessionFactory" />
         </datasource-map>
         <naming-strategy-map />
+        <deploymentDescriptor name="hibernate.cfg.xml" url="file://$MODULE_DIR$/grails-app/conf/hibernate/hibernate.cfg.xml" />
       </configuration>
     </facet>
   </component>
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
-    <content url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/cookie-0.51">
-      <sourceFolder url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/cookie-0.51/grails-app/i18n" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/cookie-0.51/grails-app/services" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/cookie-0.51/grails-app/taglib" isTestSource="false" />
-    </content>
-    <content url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/cors-1.1.6">
-      <sourceFolder url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/cors-1.1.6/src/java" isTestSource="false" />
-    </content>
-    <content url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/cxf-2.0.1">
-      <sourceFolder url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/cxf-2.0.1/src/java" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/cxf-2.0.1/src/groovy" isTestSource="false" />
-    </content>
-    <content url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/hibernate-3.6.10.14">
-      <sourceFolder url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/hibernate-3.6.10.14/src/java" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/hibernate-3.6.10.14/grails-app/i18n" isTestSource="false" />
-    </content>
-    <content url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/jquery-1.11.1">
-      <sourceFolder url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/jquery-1.11.1/src/groovy" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/jquery-1.11.1/grails-app/services" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/jquery-1.11.1/grails-app/taglib" isTestSource="false" />
-    </content>
-    <content url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/jquery-ui-1.10.4">
-      <sourceFolder url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/jquery-ui-1.10.4/grails-app/taglib" isTestSource="false" />
-    </content>
-    <content url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/remote-pagination-0.4.8">
-      <sourceFolder url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/remote-pagination-0.4.8/grails-app/i18n" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/remote-pagination-0.4.8/grails-app/taglib" isTestSource="false" />
-    </content>
-    <content url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/remoting-1.3">
-      <sourceFolder url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/remoting-1.3/src/java" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/remoting-1.3/src/groovy" isTestSource="false" />
-    </content>
-    <content url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/resources-1.2.8">
-      <sourceFolder url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/resources-1.2.8/src/java" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/resources-1.2.8/src/groovy" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/resources-1.2.8/grails-app/i18n" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/resources-1.2.8/grails-app/taglib" isTestSource="false" />
-    </content>
-    <content url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/spring-security-core-2.0-RC4">
-      <sourceFolder url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/spring-security-core-2.0-RC4/src/java" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/spring-security-core-2.0-RC4/src/groovy" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/spring-security-core-2.0-RC4/grails-app/i18n" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/spring-security-core-2.0-RC4/grails-app/controllers" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/spring-security-core-2.0-RC4/grails-app/services" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/spring-security-core-2.0-RC4/grails-app/taglib" isTestSource="false" />
-    </content>
-    <content url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/spring-security-rest-1.5.0.M2">
-      <sourceFolder url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/spring-security-rest-1.5.0.M2/grails-app/controllers" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/spring-security-rest-1.5.0.M2/grails-app/services" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/spring-security-rest-1.5.0.M2/src/groovy" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/spring-security-rest-1.5.0.M2/src/java" isTestSource="false" />
-    </content>
-    <content url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/tomcat8-8.0.5">
-      <sourceFolder url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/tomcat8-8.0.5/src/java" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/tomcat8-8.0.5/src/groovy" isTestSource="false" />
-    </content>
-    <content url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/webflow-2.1.0">
-      <sourceFolder url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/webflow-2.1.0/src/groovy" isTestSource="false" />
-    </content>
-    <content url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/webxml-1.4.1">
-      <sourceFolder url="file://$USER_HOME$/.grails/2.4.4/projects/ngbilling-community.1.0/plugins/webxml-1.4.1/src/groovy" isTestSource="false" />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/test/unit" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/test/integration" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/test/functional" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/grails-app/utils" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/groovy" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/grails-app/i18n" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/grails-app/controllers" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/grails-app/domain" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/grails-app/services" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/grails-app/taglib" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/target/classes" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library" exported="">
-      <library name="Grails User Library (ngbilling-grailsPlugins)">
+      <library name="Grails User Library (ngbilling)">
         <CLASSES>
           <root url="jar://$MAVEN_REPOSITORY$/oro/oro/2.0.8/oro-2.0.8.jar!/" />
           <root url="jar://$MAVEN_REPOSITORY$/org/eclipse/jdt/core/3.1.1/core-3.1.1.jar!/" />
@@ -339,7 +274,6 @@
           <root url="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-ehcache/3.6.10.Final/hibernate-ehcache-3.6.10.Final.jar!/" />
           <root url="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-commons-annotations/3.2.0.Final/hibernate-commons-annotations-3.2.0.Final.jar!/" />
           <root url="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-entitymanager/3.6.10.Final/hibernate-entitymanager-3.6.10.Final.jar!/" />
-          <root url="jar://$MAVEN_REPOSITORY$/org/hsqldb/hsqldb/2.3.2/hsqldb-2.3.2.jar!/" />
           <root url="jar://$MAVEN_REPOSITORY$/org/codehaus/woodstox/stax2-api/3.1.1/stax2-api-3.1.1.jar!/" />
           <root url="jar://$MAVEN_REPOSITORY$/org/codehaus/woodstox/woodstox-core-asl/4.1.4/woodstox-core-asl-4.1.4.jar!/" />
           <root url="jar://$MAVEN_REPOSITORY$/com/caucho/hessian/4.0.7/hessian-4.0.7.jar!/" />
@@ -377,12 +311,219 @@
           <root url="jar://$MAVEN_REPOSITORY$/org/drools/drools-templates/5.0.1/drools-templates-5.0.1.jar!/" />
           <root url="jar://$MAVEN_REPOSITORY$/org/drools/drools-decisiontables/5.0.1/drools-decisiontables-5.0.1.jar!/" />
           <root url="jar://$MAVEN_REPOSITORY$/jexcelapi/jxl/2.4.2/jxl-2.4.2.jar!/" />
-          <root url="jar://$MAVEN_REPOSITORY$/mysql/mysql-connector-java/5.1.26/mysql-connector-java-5.1.26.jar!/" />
+          <root url="file://$MODULE_DIR$/lib" />
           <root url="jar://$MAVEN_REPOSITORY$/org/postgresql/postgresql/42.2.1/postgresql-42.2.1.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/lib/commons-cli/commons-cli/jars/commons-cli-1.2.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/lib/com.google.code.findbugs/jsr305/jars/jsr305-1.3.9.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-web-fileupload-2.4.4.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/lib/commons-fileupload/commons-fileupload/jars/commons-fileupload-1.3.1.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-web-common-2.4.4.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-databinding-2.4.4.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-web-gsp-2.4.4.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-web-jsp-2.4.4.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-web-mvc-2.4.4.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-web-url-mappings-2.4.4.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-web-sitemesh-2.4.4.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/lib/opensymphony/sitemesh/jars/sitemesh-2.4.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-core-2.4.4.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-spring-2.4.4.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/lib/aopalliance/aopalliance/jars/aopalliance-1.0.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-bootstrap-2.4.4.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-web-databinding-2.4.4.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/lib/com.google.code.gson/gson/jars/gson-2.2.4.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-plugin-databinding-2.4.4.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/lib/org.apache.tomcat/tomcat-juli/jars/tomcat-juli-7.0.50.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/lib/org.apache.tomcat/tomcat-jdbc/jars/tomcat-jdbc-7.0.50.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-plugin-datasource-2.4.4.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/lib/org.slf4j/slf4j-api/jars/slf4j-api-1.7.5.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-web-2.4.4.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-plugin-validation-2.4.4.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-plugin-controllers-2.4.4.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/lib/org.slf4j/jcl-over-slf4j/jars/jcl-over-slf4j-1.7.5.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-plugin-rest-2.4.4.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/lib/org.codehaus.groovy/groovy-all/jars/groovy-all-2.3.7.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/lib/javax.transaction/jta/jars/jta-1.1.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/lib/org.hibernate.javax.persistence/hibernate-jpa-2.1-api/jars/hibernate-jpa-2.1-api-1.0.0.Final.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/lib/bouncycastle/bcmail-jdk14/jars/bcmail-jdk14-138.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/lib/bouncycastle/bcprov-jdk14/jars/bcprov-jdk14-138.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/lib/org.springframework/spring-context-support/jars/spring-context-support-4.0.7.RELEASE.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpcore/4.4.13/httpcore-4.4.13.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpclient/4.5.12/httpclient-4.5.12.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/lib/commons-collections/commons-collections/jars/commons-collections-3.2.1.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/lib/asm/asm/jars/asm-3.3.1.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-plugin-mimetypes-2.4.4.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-plugin-i18n-2.4.4.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/lib/commons-lang/commons-lang/jars/commons-lang-2.6.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-plugin-filters-2.4.4.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-web-gsp-taglib-2.4.4.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-plugin-log4j-2.4.4.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/lib/org.slf4j/jul-to-slf4j/jars/jul-to-slf4j-1.7.5.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-plugin-services-2.4.4.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-plugin-gsp-2.4.4.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-plugin-codecs-2.4.4.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-encoder-2.4.4.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-logging-2.4.4.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/lib/org.springframework/spring-tx/jars/spring-tx-4.0.7.RELEASE.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-plugin-servlets-2.4.4.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/lib/org.codehaus.gpars/gpars/jars/gpars-1.2.1.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/lib/org.codehaus.jsr166-mirror/jsr166y/jars/jsr166y-1.7.0.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-plugin-converters-2.4.4.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-plugin-domain-class-2.4.4.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-validation-2.4.4.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/lib/com.googlecode.concurrentlinkedhashmap/concurrentlinkedhashmap-lru/jars/concurrentlinkedhashmap-lru-1.4.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-plugin-async-2.4.4.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-async-2.4.4.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-plugin-url-mappings-2.4.4.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/lib/org.springframework/spring-aop/jars/spring-aop-4.0.7.RELEASE.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/lib/org.springframework/spring-context/jars/spring-context-4.0.7.RELEASE.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/lib/org.springframework/spring-expression/jars/spring-expression-4.0.7.RELEASE.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/lib/org.springframework/spring-web/jars/spring-web-4.0.7.RELEASE.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/lib/org.springframework/spring-jdbc/jars/spring-jdbc-4.0.7.RELEASE.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/lib/org.apache.tomcat.embed/tomcat-embed-logging-log4j/jars/tomcat-embed-logging-log4j-7.0.50.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/org/hsqldb/hsqldb/2.3.2/hsqldb-2.3.2.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/lib/xalan/serializer/jars/serializer-2.7.1.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/lib/org.aspectj/aspectjrt/jars/aspectjrt-1.8.2.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/lib/org.springframework/spring-aspects/jars/spring-aspects-4.0.7.RELEASE.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/lib/org.aspectj/aspectjweaver/jars/aspectjweaver-1.8.2.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/lib/com.h2database/h2/jars/h2-1.3.176.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/lib/log4j/log4j/jars/log4j-1.2.17.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-resources-2.4.4.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/lib/cglib/cglib/jars/cglib-2.2.2.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/lib/org.codehaus.gant/gant_groovy1.8/jars/gant_groovy1.8-1.9.6.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/lib/junit/junit/jars/junit-4.11.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/lib/org.spockframework/spock-core/jars/spock-core-0.7-groovy-2.0.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/lib/org.hamcrest/hamcrest-core/jars/hamcrest-core-1.3.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/lib/org.springframework/spring-test/jars/spring-test-4.0.7.RELEASE.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/lib/org.fusesource.jansi/jansi/jars/jansi-1.11.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-project-api-2.4.4.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/lib/jline/jline/jars/jline-2.12.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-test-2.4.4.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/lib/org.objenesis/objenesis/jars/objenesis-1.4.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-plugin-testing-2.4.4.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/lib/javax.servlet/javax.servlet-api/jars/javax.servlet-api-3.0.1.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/lib/org.apache.ant/ant-trax/jars/ant-trax-1.7.1.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/lib/org.apache.ant/ant-junit/jars/ant-junit-1.8.4.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/lib/org.apache.ant/ant/jars/ant-1.8.4.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/lib/org.apache.ant/ant-launcher/jars/ant-launcher-1.8.4.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/lib/net.java.dev.jna/jna/jars/jna-4.0.0.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/lib/org.jsoup/jsoup/jars/jsoup-1.7.3.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/lib/org.apache.ivy/ivy/jars/ivy-2.3.0.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/lib/org.yaml/snakeyaml/jars/snakeyaml-1.8.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/lib/org.xhtmlrenderer/core-renderer/jars/core-renderer-R8.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-docs-2.4.4.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-scripts-2.4.4.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/lib/org.grails/grails-gdoc-engine/jars/grails-gdoc-engine-1.0.1.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/org/scribe/scribe/1.3.6/scribe-1.3.6.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/com/nimbusds/nimbus-jose-jwt/3.9/nimbus-jose-jwt-3.9.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/net/jcip/jcip-annotations/1.0/jcip-annotations-1.0.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/net/minidev/json-smart/1.1.1/json-smart-1.1.1.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/org/bouncycastle/bcprov-jdk15on/1.51/bcprov-jdk15on-1.51.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/com/google/guava/guava-annotations/r03/guava-annotations-r03.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/com/google/guava/guava-base/r03/guava-base-r03.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/org/pac4j/pac4j-core/1.6.0/pac4j-core-1.6.0.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/org/pac4j/pac4j-oauth/1.6.0/pac4j-oauth-1.6.0.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-lang3/3.1/commons-lang3-3.1.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/net/spy/spymemcached/2.11.6/spymemcached-2.11.6.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/com/google/guava/guava-io/r03/guava-io-r03.jar!/" />
         </CLASSES>
         <JAVADOC />
-        <SOURCES />
+        <SOURCES>
+          <root url="jar:///home/../IDE/grails-2.4.4/dist/grails-web-fileupload-2.4.4-sources.jar!/" />
+          <root url="jar:///home/../IDE/grails-2.4.4/dist/grails-web-common-2.4.4-sources.jar!/" />
+          <root url="jar:///home/../IDE/grails-2.4.4/dist/grails-databinding-2.4.4-sources.jar!/" />
+          <root url="jar:///home/../IDE/grails-2.4.4/dist/grails-web-gsp-2.4.4-sources.jar!/" />
+          <root url="jar:///home/../IDE/grails-2.4.4/dist/grails-web-jsp-2.4.4-sources.jar!/" />
+          <root url="jar:///home/../IDE/grails-2.4.4/dist/grails-web-mvc-2.4.4-sources.jar!/" />
+          <root url="jar:///home/../IDE/grails-2.4.4/dist/grails-web-url-mappings-2.4.4-sources.jar!/" />
+          <root url="jar:///home/../IDE/grails-2.4.4/dist/grails-web-sitemesh-2.4.4-sources.jar!/" />
+          <root url="jar:///home/../IDE/grails-2.4.4/dist/grails-core-2.4.4-sources.jar!/" />
+          <root url="jar:///home/../IDE/grails-2.4.4/dist/grails-spring-2.4.4-sources.jar!/" />
+          <root url="jar:///home/../IDE/grails-2.4.4/dist/grails-bootstrap-2.4.4-sources.jar!/" />
+          <root url="jar:///home/../IDE/grails-2.4.4/dist/grails-web-databinding-2.4.4-sources.jar!/" />
+          <root url="jar:///home/../IDE/grails-2.4.4/dist/grails-plugin-databinding-2.4.4-sources.jar!/" />
+          <root url="jar:///home/../IDE/grails-2.4.4/dist/grails-plugin-datasource-2.4.4-sources.jar!/" />
+          <root url="jar:///home/../IDE/grails-2.4.4/dist/grails-web-2.4.4-sources.jar!/" />
+          <root url="jar:///home/../IDE/grails-2.4.4/dist/grails-plugin-validation-2.4.4-sources.jar!/" />
+          <root url="jar:///home/../IDE/grails-2.4.4/dist/grails-plugin-controllers-2.4.4-sources.jar!/" />
+          <root url="jar:///home/../IDE/grails-2.4.4/dist/grails-plugin-rest-2.4.4-sources.jar!/" />
+          <root url="jar:///home/../IDE/grails-2.4.4/dist/grails-plugin-mimetypes-2.4.4-sources.jar!/" />
+          <root url="jar:///home/../IDE/grails-2.4.4/dist/grails-plugin-i18n-2.4.4-sources.jar!/" />
+          <root url="jar:///home/../IDE/grails-2.4.4/dist/grails-plugin-filters-2.4.4-sources.jar!/" />
+          <root url="jar:///home/../IDE/grails-2.4.4/dist/grails-web-gsp-taglib-2.4.4-sources.jar!/" />
+          <root url="jar:///home/../IDE/grails-2.4.4/dist/grails-plugin-log4j-2.4.4-sources.jar!/" />
+          <root url="jar:///home/../IDE/grails-2.4.4/dist/grails-plugin-services-2.4.4-sources.jar!/" />
+          <root url="jar:///home/../IDE/grails-2.4.4/dist/grails-plugin-gsp-2.4.4-sources.jar!/" />
+          <root url="jar:///home/../IDE/grails-2.4.4/dist/grails-plugin-codecs-2.4.4-sources.jar!/" />
+          <root url="jar:///home/../IDE/grails-2.4.4/dist/grails-encoder-2.4.4-sources.jar!/" />
+          <root url="jar:///home/../IDE/grails-2.4.4/dist/grails-logging-2.4.4-sources.jar!/" />
+          <root url="jar:///home/../IDE/grails-2.4.4/dist/grails-plugin-servlets-2.4.4-sources.jar!/" />
+          <root url="jar:///home/../IDE/grails-2.4.4/dist/grails-plugin-converters-2.4.4-sources.jar!/" />
+          <root url="jar:///home/../IDE/grails-2.4.4/dist/grails-plugin-domain-class-2.4.4-sources.jar!/" />
+          <root url="jar:///home/../IDE/grails-2.4.4/dist/grails-validation-2.4.4-sources.jar!/" />
+          <root url="jar:///home/../IDE/grails-2.4.4/dist/grails-plugin-async-2.4.4-sources.jar!/" />
+          <root url="jar:///home/../IDE/grails-2.4.4/dist/grails-async-2.4.4-sources.jar!/" />
+          <root url="jar:///home/../IDE/grails-2.4.4/dist/grails-plugin-url-mappings-2.4.4-sources.jar!/" />
+          <root url="jar:///home/../IDE/grails-2.4.4/dist/grails-resources-2.4.4-sources.jar!/" />
+          <root url="jar:///home/../IDE/grails-2.4.4/dist/grails-project-api-2.4.4-sources.jar!/" />
+          <root url="jar:///home/../IDE/grails-2.4.4/dist/grails-test-2.4.4-sources.jar!/" />
+          <root url="jar:///home/../IDE/grails-2.4.4/dist/grails-plugin-testing-2.4.4-sources.jar!/" />
+          <root url="jar:///home/../IDE/grails-2.4.4/dist/grails-docs-2.4.4-sources.jar!/" />
+          <root url="jar:///home/../IDE/grails-2.4.4/dist/grails-scripts-2.4.4-sources.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-web-fileupload-2.4.4-sources.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-web-common-2.4.4-sources.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-databinding-2.4.4-sources.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-web-gsp-2.4.4-sources.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-web-jsp-2.4.4-sources.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-web-mvc-2.4.4-sources.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-web-url-mappings-2.4.4-sources.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-web-sitemesh-2.4.4-sources.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-core-2.4.4-sources.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-spring-2.4.4-sources.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-bootstrap-2.4.4-sources.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-web-databinding-2.4.4-sources.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-plugin-databinding-2.4.4-sources.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/javax/ws/rs/jsr311-api/1.1.1/jsr311-api-1.1.1-sources.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-plugin-datasource-2.4.4-sources.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-web-2.4.4-sources.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-plugin-validation-2.4.4-sources.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-plugin-controllers-2.4.4-sources.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-plugin-rest-2.4.4-sources.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/javax/validation/validation-api/1.1.0.Final/validation-api-1.1.0.Final-sources.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/commons-beanutils/commons-beanutils/1.9.2/commons-beanutils-1.9.2-sources.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-plugin-mimetypes-2.4.4-sources.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-plugin-i18n-2.4.4-sources.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-plugin-filters-2.4.4-sources.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-web-gsp-taglib-2.4.4-sources.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-plugin-log4j-2.4.4-sources.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-plugin-services-2.4.4-sources.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-plugin-gsp-2.4.4-sources.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-plugin-codecs-2.4.4-sources.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-encoder-2.4.4-sources.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-logging-2.4.4-sources.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-plugin-servlets-2.4.4-sources.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-plugin-converters-2.4.4-sources.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-plugin-domain-class-2.4.4-sources.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-validation-2.4.4-sources.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-plugin-async-2.4.4-sources.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-async-2.4.4-sources.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-plugin-url-mappings-2.4.4-sources.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/javax/batch/javax.batch-api/1.0/javax.batch-api-1.0-sources.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/org/codehaus/jettison/jettison/1.2/jettison-1.2-sources.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-resources-2.4.4-sources.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-project-api-2.4.4-sources.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-test-2.4.4-sources.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-plugin-testing-2.4.4-sources.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/org/hamcrest/hamcrest-all/1.3/hamcrest-all-1.3-sources.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0-sources.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-docs-2.4.4-sources.jar!/" />
+          <root url="jar://$USER_HOME$/IDE/grails-2.4.4/dist/grails-scripts-2.4.4-sources.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/net/jcip/jcip-annotations/1.0/jcip-annotations-1.0-sources.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpcore/4.4.13/httpcore-4.4.13-sources.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpclient/4.5.12/httpclient-4.5.12-sources.jar!/" />
+        </SOURCES>
+        <jarDirectory url="file://$MODULE_DIR$/lib" recursive="false" />
       </library>
     </orderEntry>
+    <orderEntry type="module" module-name="ngbilling-grailsPlugins" />
   </component>
 </module>

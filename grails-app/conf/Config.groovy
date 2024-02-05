@@ -413,3 +413,78 @@ validImageExtensions = ['image/png', 'image/jpeg', 'image/gif']
 // for now. It is known to conflict with the BE1PC config for JMS
 grails.transaction.chainedTransactionManagerPostProcessor.blacklistPattern = '.*'
 
+
+
+
+
+
+//cors config.
+cors.enabled=true
+cors.url.pattern = '/api/*'
+cors.headers=[
+	'Access-Control-Allow-Origin': '*',
+	'Access-Control-Allow-Credentials': true,
+	'Access-Control-Allow-Headers': 'origin, authorization, accept, content-type, x-requested-with',
+	'Access-Control-Allow-Methods': 'GET, HEAD, POST, PUT, DELETE, TRACE, OPTIONS',
+	'Access-Control-Max-Age': 3600
+	]
+
+
+//Config for Spring Security REST plugin
+
+//login
+grails.plugin.springsecurity.rest.login.active=true
+grails.plugin.springsecurity.rest.login.endpointUrl="/api/login"
+grails.plugin.springsecurity.rest.login.failureStatusCode=401
+grails.plugin.springsecurity.rest.login.useJsonCredentials=true
+grails.plugin.springsecurity.rest.login.usernamePropertyName='username'
+grails.plugin.springsecurity.rest.login.passwordPropertyName='password'
+
+//logout
+grails.plugin.springsecurity.rest.logout.endpointUrl='/api/logout'
+grails.plugin.springsecurity.rest.token.validation.headerName='X-Auth-Token'
+
+//token generation
+grails.plugin.springsecurity.rest.token.generation.useSecureRandom=true
+grails.plugin.springsecurity.rest.token.generation.useUUID=false
+
+//token storage
+// use memcached.
+//grails.plugin.springsecurity.rest.token.storage.useMemcached  false
+//grails.plugin.springsecurity.rest.token.storage.memcached.hosts   localhost:11211
+//grails.plugin.springsecurity.rest.token.storage.memcached.username    ''
+//grails.plugin.springsecurity.rest.token.storage.memcached.password    ''
+//grails.plugin.springsecurity.rest.token.storage.memcached.expiration  3600
+
+//use GROM
+grails.plugin.springsecurity.rest.token.storage.useGorm   = true
+grails.plugin.springsecurity.rest.token.storage.gorm.tokenDomainClassName = 'jbilling.AuthenticationToken'
+grails.plugin.springsecurity.rest.token.storage.gorm.tokenValuePropertyName  = 'tokenValue'
+grails.plugin.springsecurity.rest.token.storage.gorm.usernamePropertyName = 'username'
+
+/*
+//use cache as storage
+grails.plugin.springsecurity.rest.token.storage.useGrailsCache=true
+grails.plugin.springsecurity.rest.token.storage.grailsCacheName='xauth-token'
+*/
+
+//token rendering
+grails.plugin.springsecurity.rest.token.rendering.usernamePropertyName='username'
+grails.plugin.springsecurity.rest.token.rendering.authoritiesPropertyName='role'
+grails.plugin.springsecurity.rest.token.rendering.tokenPropertyName='token'
+
+
+//token validate
+grails.plugin.springsecurity.rest.token.validation.useBearerToken = false
+grails.plugin.springsecurity.rest.token.validation.active=true
+grails.plugin.springsecurity.rest.token.validation.endpointUrl='/api/validate'
+grails.plugin.springsecurity.rest.token.validation.headerName='X-Auth-Token'
+
+
+grails.plugin.springsecurity.filterChain.chainMap = [
+		
+		'/api/**': 'JOINED_FILTERS,-anonymousAuthenticationFilter,-exceptionTranslationFilter,-authenticationProcessingFilter,-securityContextPersistenceFilter',
+		'/**': 'JOINED_FILTERS,-basicAuthenticationFilter,-basicExceptionTranslationFilter, -statelessSecurityContextPersistenceFilter'
+ ]
+
+

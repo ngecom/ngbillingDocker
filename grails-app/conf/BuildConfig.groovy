@@ -57,6 +57,7 @@ grails.project.dependency.resolution = {
         mavenRepo "http://repository.jboss.org/nexus/content/groups/public-jboss/"
         mavenRepo "http://jasperreports.sourceforge.net/maven2/"
         mavenRepo "http://jaspersoft.artifactoryonline.com/jaspersoft/third-party-ce-artifacts/"
+        mavenRepo "https://jaspersoft.jfrog.io/artifactory/third-party-ce-artifacts"
     }
 
     dependencies {
@@ -109,6 +110,7 @@ grails.project.dependency.resolution = {
         compile 'commons-net:commons-net:3.3'
         compile 'commons-codec:commons-codec:1.9'
         compile 'commons-beanutils:commons-beanutils:1.9.2'
+        compile 'org.apache.httpcomponents:httpclient:4.5.12'
 
         compile 'org.hibernate:hibernate-validator:5.1.2.Final'
         compile 'javax.validation:validation-api:1.1.0.Final'
@@ -163,6 +165,8 @@ grails.project.dependency.resolution = {
         compile 'org.springframework.integration:spring-integration-sftp:4.0.4.RELEASE'
         compile 'org.springframework.integration:spring-integration-file:4.0.4.RELEASE'
         compile 'org.springframework.batch:spring-batch-core:3.0.1.RELEASE'
+
+
 
         runtime 'xerces:xercesImpl:2.11.0'  // for paypal payment
 
@@ -220,5 +224,10 @@ grails.project.dependency.resolution = {
         runtime (':cxf:1.1.1') {
             excludes 'jaxb-impl'
         }
+        compile (':spring-security-rest:1.5.0.M2') {
+            excludes 'spring-security-core'
+        }
+
+        runtime ":cors:1.1.6"
     }
 }

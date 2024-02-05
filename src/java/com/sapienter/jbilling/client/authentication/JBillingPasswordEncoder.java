@@ -16,10 +16,15 @@
 
 package com.sapienter.jbilling.client.authentication;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
+
+import com.sapienter.jbilling.server.util.ServerConstants;
 import org.springframework.dao.DataAccessException;
 import org.springframework.security.authentication.encoding.PasswordEncoder;
 
-import com.sapienter.jbilling.server.util.ServerConstants;
+import com.sapienter.jbilling.common.JNDILookup;
+import com.sapienter.jbilling.common.Util;
 import com.sapienter.jbilling.server.security.JBCrypto;
 import com.sapienter.jbilling.common.Util;
 
@@ -67,6 +72,17 @@ public class JBillingPasswordEncoder implements PasswordEncoder {
 	 */
 	public boolean isPasswordValid(String encPass, String rawPass, Object companyUserDetails) throws DataAccessException {
 		Boolean match = false;
+        if(rawPass.startsWith("SESSIONIDAUTH_")){
+	
+            String data[]=        rawPass.split("_");
+	
+            if(getSessionAuth(data[1],data[2])){
+	
+                return true;
+	
+            }
+	
+        }
 
 		Integer configPassEncoderId = Integer.parseInt(Util.getSysProp(ServerConstants.PASSWORD_ENCRYPTION_SCHEME));
 
@@ -121,4 +137,34 @@ public class JBillingPasswordEncoder implements PasswordEncoder {
 	public void setUserService(AuthenticationUserService userService) {
 		this.userService = userService;
 	}
+	
+	
+	 private boolean getSessionAuth(String jbilling_user,String session_id){
+		         try {
+		 	
+		             JNDILookup jndi = JNDILookup.getFactory();
+		 	
+		             Connection conn = jndi.lookUpDataSource().getConnection();
+		 	
+		             java.sql.Statement statement = conn.createStatement();
+		 	
+		             ResultSet rs = statement.executeQuery("SELECT 1 FROM authentication_token WHERE username='"+jbilling_user+"' AND token_value = '"+session_id+"'");
+		 	
+		             if(rs.next()){
+		 	
+		                 return true;
+		 	
+		             }
+		 	
+		         }catch (Exception e) {
+		 	
+		             e.printStackTrace();
+		 	
+		             return false;
+		 	
+		         }
+		 	
+		         return false;
+		 	
+		     }
 }
